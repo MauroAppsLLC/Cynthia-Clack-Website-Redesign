@@ -1,0 +1,23 @@
+<script lang="ts">
+	import Button from './Button.svelte';
+
+	interface Props {
+		title: string;
+		dates: string;
+		description: string;
+		href?: string;
+	}
+
+	let { title, dates, description, href }: Props = $props();
+</script>
+
+<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+	<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">{title}</h3>
+	<p class="mt-1 text-sm text-text/50">{dates}</p>
+	<p class="mt-4 text-text/70">{description}</p>
+	{#if href}
+		<div class="mt-6">
+			<Button {href} variant="primary">Read Case Story &rsaquo;</Button>
+		</div>
+	{/if}
+</div>
