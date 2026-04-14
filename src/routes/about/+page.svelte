@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
-	import headshotSrc from '$lib/assets/Cynthia-Headshot.png';
+	import brickLeftSrc from '$lib/assets/brick-left.png';
 </script>
 
 <svelte:head>
@@ -9,15 +9,20 @@
 </svelte:head>
 
 <!-- Hero -->
-<section class="py-section">
-	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-12 px-6 md:grid-cols-2">
-		<img
-			src={headshotSrc}
-			alt="Cynthia Clack portrait"
-			class="w-full max-w-md mx-auto rounded-[var(--radius-card)] object-cover"
-			style="aspect-ratio: 4/5;"
-		/>
-		<div>
+<section class="relative min-h-[75vh] overflow-hidden bg-bg">
+	<img
+		src={brickLeftSrc}
+		alt=""
+		class="absolute inset-0 h-full w-full object-cover"
+		style="object-position: 20% 30%;"
+	/>
+	<!-- Fade right so text is readable -->
+	<div class="pointer-events-none absolute inset-0 bg-gradient-to-l from-bg from-15% via-bg/70 via-40% to-transparent to-65%"></div>
+	<!-- Fade bottom into next section -->
+	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
+
+	<div class="relative z-10 mx-auto flex min-h-[75vh] max-w-[var(--width-content)] items-center justify-end px-6">
+		<div class="max-w-lg py-24 md:py-32 text-right">
 			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)] italic">
 				A life in law. A voice shaped by experience.
 			</h1>

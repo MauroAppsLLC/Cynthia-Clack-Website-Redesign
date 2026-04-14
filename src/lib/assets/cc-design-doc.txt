@@ -1,0 +1,85 @@
+Cynthia Clack Website — Builder
+
+Instructions
+
+Global Design System
+Colors
+Background: #F7F5F2
+Primary Text: #1A1A1A
+Accent: #1F3A5F
+Secondary: #EFE7DF / white
+Typography
+Headlines: Playfair Display
+Body: Inter
+Sizes:
+H1: 56–72px
+H2: 40–48px
+H3: 26–32px
+Body: 16–18px
+Small: 13–14px
+Spacing
+Section padding: 100–120px vertical
+Max width: 1200px
+Text width: 650px
+Grid gaps: 24–40px
+UI Style
+Border radius: 24–32px
+Soft shadows
+Buttons: pill style
+Navigation
+Left: Cynthia Clack
+Right: About | Work | Speaking | Contact
+
+Homepage
+Hero
+Layout: Split (text left, portrait right)
+Headline: What I’ve seen inside the system… most people never will.
+Subheadline: Attorney. Author. Advocate.
+Body: Over four decades inside the legal system...
+Buttons: Explore My Work | Latest Book
+Positioning Strip
+40+ Years — Legal experience
+Author — Books shaped by real cases
+Advocate — Voice for complex issues
+Featured Book
+Discovering the Club
+Description + Explore Book button
+About Preview
+Short bio + Read Full Bio
+Areas of Focus
+Family Law | Advocacy | Authorship
+Selected Work
+Featured work + supporting cards
+Speaking
+Intro + topics + Learn More
+Email Signup
+Name + Email + Subscribe
+
+About Page
+Hero
+Headline: A life in law. A voice shaped by experience.
+Subheadline: Attorney. Author. Advocate.
+Her Story
+Grew up in a family with deep roots in the law...
+
+Credentials + Beyond
+Texas Board-Certified in Family Law
+Beyond the courtroom
+Featured Work + Quote
+Quote block + book + Explore button
+
+Work Page
+Hero
+My Work
+Books, Projects &amp; Cases
+Landmark Cases
+Johnny Foote’s Story
+The Emily Wu Case
+Projects
+Eye of the Tiger — A Rock Opera
+Books
+Discovering the Club
+Crossing Together
+Doodles books
+Ending
+Cynthia’s work continues to evolve...
