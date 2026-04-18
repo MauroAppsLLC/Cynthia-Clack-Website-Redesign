@@ -193,7 +193,7 @@
 		<p class="mx-auto mt-3 max-w-[var(--width-text)] text-white/70">
 			Receive updates on new writing, speaking engagements, and insights from Cynthia's work.
 		</p>
-		<form class="mx-auto mt-8 flex max-w-lg flex-col gap-4 sm:flex-row" data-netlify="true" name="newsletter">
+		<form class="mx-auto mt-8 flex max-w-lg flex-col gap-4 sm:flex-row" method="POST" action="/?success=true" data-netlify="true" name="newsletter">
 			<input type="hidden" name="form-name" value="newsletter" />
 			<input
 				type="text"

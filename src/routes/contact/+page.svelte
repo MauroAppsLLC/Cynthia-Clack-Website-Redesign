@@ -52,6 +52,7 @@
 			<form
 				class="mt-6 space-y-5"
 				method="POST"
+				action="/contact?success=true"
 				data-netlify="true"
 				name="contact"
 			>
