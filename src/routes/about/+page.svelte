@@ -2,17 +2,24 @@
 	import Button from '$lib/components/Button.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import brickLeftSrc from '$lib/assets/brick-left.png';
+
+	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
 <svelte:head>
-	<title>About — Cynthia Clack</title>
+	<title>About Cynthia Clack — Texas Family Law Attorney & Author | Biography</title>
+	<meta name="description" content="Learn about Cynthia L. Clack — pioneering Texas attorney, author, and advocate. One of the first women to practice law in Odessa, TX. Daughter of a Texas District Judge, stepdaughter of a Texas Supreme Court Justice." />
+	<meta property="og:title" content="About Cynthia Clack — Texas Family Law Attorney & Author" />
+	<meta property="og:description" content="One of the first women to practice law in west Texas. A career spanning 40+ years in family law, public service, authorship, and creative work." />
+	<meta property="og:url" content="{SITE_URL}/about" />
 </svelte:head>
+
 
 <!-- Hero -->
 <section class="relative min-h-[75vh] overflow-hidden bg-bg">
 	<img
 		src={brickLeftSrc}
-		alt=""
+		alt="Cynthia Clack photographed in front of a historic brick wall in Odessa, Texas"
 		class="absolute inset-0 h-full w-full object-cover"
 		style="object-position: 20% 30%;"
 	/>

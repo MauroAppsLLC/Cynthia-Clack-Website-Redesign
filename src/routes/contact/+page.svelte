@@ -1,10 +1,104 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+
+	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
 <svelte:head>
-	<title>Contact — Cynthia Clack</title>
+	<title>Contact Cynthia Clack — Family Law Attorney in Odessa, TX | (432) 337-8511</title>
+	<meta name="description" content="Contact the Law Offices of Cynthia L. Clack in Odessa, TX. Reach out for family law consultations, speaking inquiries, media requests, or general questions. Call (432) 337-8511." />
+	<meta property="og:title" content="Contact Cynthia Clack — Family Law Attorney | Odessa, TX" />
+	<meta property="og:description" content="Get in touch with Texas family law attorney Cynthia Clack. Office at 522 N Grant Ave, Odessa, TX. Call (432) 337-8511 or send a message online." />
+	<meta property="og:url" content="{SITE_URL}/contact" />
+
+	<!-- LocalBusiness + LegalService JSON-LD — critical for local SEO / Google local pack -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": ["LegalService", "LocalBusiness"],
+		"@id": "${SITE_URL}/#organization",
+		"name": "Law Offices of Cynthia L. Clack",
+		"alternateName": "Cynthia Clack Attorney",
+		"description": "Texas Board-Certified Family Law attorney offering legal services in high-conflict custody, complex divorce, and advocacy for families in Odessa, TX and the surrounding Permian Basin region.",
+		"url": "${SITE_URL}",
+		"telephone": "+14323378511",
+		"email": "cynthia.l.clack@gmail.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "522 N Grant Ave",
+			"addressLocality": "Odessa",
+			"addressRegion": "TX",
+			"postalCode": "79761-5121",
+			"addressCountry": "US"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 31.8457,
+			"longitude": -102.3677
+		},
+		"areaServed": [
+			{
+				"@type": "City",
+				"name": "Odessa",
+				"sameAs": "https://en.wikipedia.org/wiki/Odessa,_Texas"
+			},
+			{
+				"@type": "City",
+				"name": "Midland"
+			},
+			{
+				"@type": "State",
+				"name": "Texas"
+			}
+		],
+		"openingHoursSpecification": [
+			{
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+				"opens": "08:00",
+				"closes": "17:00"
+			}
+		],
+		"hasOfferCatalog": {
+			"@type": "OfferCatalog",
+			"name": "Legal Services",
+			"itemListElement": [
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Family Law Representation",
+						"description": "High-conflict custody, complex divorce, and family court advocacy"
+					}
+				},
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Wrongful Conviction Advocacy",
+						"description": "Advocacy for clients facing unjust legal outcomes"
+					}
+				},
+				{
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "International Child Custody",
+						"description": "Cross-border custody disputes and international family law"
+					}
+				}
+			]
+		},
+		"founder": {
+			"@id": "${SITE_URL}/#person"
+		},
+		"sameAs": [
+			"${SITE_URL}"
+		]
+	}
+	<\/script>`}
 </svelte:head>
+
 
 <!-- Hero -->
 <section class="py-section">

@@ -4,11 +4,88 @@
 	import CaseCard from '$lib/components/CaseCard.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
+
+	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
 <svelte:head>
-	<title>My Work — Cynthia Clack</title>
+	<title>Books, Cases & Creative Work — Cynthia Clack | Texas Attorney & Author</title>
+	<meta name="description" content="Explore Cynthia Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger." />
+	<meta property="og:title" content="Books, Cases & Creative Work — Cynthia Clack" />
+	<meta property="og:description" content="Landmark cases, published books, and creative projects from Texas attorney and author Cynthia Clack — from wrongful conviction advocacy to an internationally performed rock opera." />
+	<meta property="og:url" content="{SITE_URL}/work" />
+
+	<!-- Book JSON-LD for rich results -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ItemList",
+		"name": "Books by Cynthia L. Clack",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@type": "Book",
+					"name": "Discovering the Club",
+					"author": {
+						"@type": "Person",
+						"name": "Cynthia L. Clack"
+					},
+					"datePublished": "2024",
+					"url": "${SITE_URL}/work#books",
+					"description": "A powerful examination of patterns hidden inside the family court system — parental alienation, institutional failure, and the resilience of those caught in between.",
+					"inLanguage": "en"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"item": {
+					"@type": "Book",
+					"name": "Crossing Together",
+					"author": {
+						"@type": "Person",
+						"name": "Cynthia L. Clack"
+					},
+					"datePublished": "2017",
+					"url": "${SITE_URL}/work#books",
+					"inLanguage": "en"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"item": {
+					"@type": "Book",
+					"name": "Doodles the American Poodle",
+					"author": {
+						"@type": "Person",
+						"name": "Cynthia L. Clack"
+					},
+					"url": "${SITE_URL}/work#books",
+					"inLanguage": "en"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 4,
+				"item": {
+					"@type": "Book",
+					"name": "Doodles the American Hero",
+					"author": {
+						"@type": "Person",
+						"name": "Cynthia L. Clack"
+					},
+					"url": "${SITE_URL}/work#books",
+					"inLanguage": "en"
+				}
+			}
+		]
+	}
+	<\/script>`}
 </svelte:head>
+
 
 <!-- Hero -->
 <section class="py-section text-center">

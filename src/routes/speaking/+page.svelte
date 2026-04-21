@@ -3,6 +3,8 @@
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 
+	const SITE_URL = 'https://cynthiaclack.com';
+
 	const topics = [
 		{
 			title: 'Family Law & High-Conflict Custody',
@@ -28,8 +30,42 @@
 </script>
 
 <svelte:head>
-	<title>Speaking — Cynthia Clack</title>
+	<title>Speaking Engagements — Cynthia Clack | Family Law Keynote Speaker, Texas</title>
+	<meta name="description" content="Book Cynthia Clack for keynotes, panels, CLEs, and university lectures. Speaking topics include family law, high-conflict custody, wrongful conviction advocacy, women in law, and legal storytelling." />
+	<meta property="og:title" content="Speaking Engagements — Cynthia Clack | Keynote Speaker" />
+	<meta property="og:description" content="Book Cynthia Clack for conferences, bar associations, universities, and CLEs. 40+ years of real-world legal experience brought to every stage and podium." />
+	<meta property="og:url" content="{SITE_URL}/speaking" />
+
+	<!-- Speaker / Person JSON-LD -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "${SITE_URL}/#person",
+		"name": "Cynthia L. Clack",
+		"url": "${SITE_URL}",
+		"description": "Texas Board-Certified Family Law attorney and keynote speaker with 40+ years of legal experience. Available for conferences, bar associations, universities, community organizations, and CLEs.",
+		"knowsAbout": [
+			"Family Law",
+			"High-Conflict Custody",
+			"Parental Alienation",
+			"Wrongful Conviction Advocacy",
+			"International Child Custody",
+			"Women in Law",
+			"Legal Storytelling"
+		],
+		"performerIn": {
+			"@type": "Event",
+			"name": "Speaking Engagement with Cynthia Clack",
+			"organizer": {
+				"@type": "Organization",
+				"name": "Law Offices of Cynthia L. Clack"
+			}
+		}
+	}
+	<\/script>`}
 </svelte:head>
+
 
 <!-- Hero -->
 <section class="py-section">

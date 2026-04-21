@@ -8,6 +8,8 @@
 	import brickHeroSrc from '$lib/assets/brick-hero.png';
 	import brickRightSrc from '$lib/assets/brick-right.png';
 
+	const SITE_URL = 'https://cynthiaclack.com';
+
 	const stats = [
 		{ value: '40+', label: 'Years of legal experience' },
 		{ value: 'Author', label: 'Books shaped by real cases' },
@@ -34,15 +36,35 @@
 </script>
 
 <svelte:head>
-	<title>Cynthia Clack — Attorney. Author. Advocate.</title>
+	<title>Cynthia Clack — Texas Family Law Attorney, Author & Advocate | Odessa, TX</title>
+	<meta name="description" content="Cynthia Clack is a Texas Board-Certified Family Law attorney in Odessa, TX with 40+ years of experience in high-conflict custody, complex divorce, and landmark advocacy. Also an acclaimed author." />
+	<meta property="og:title" content="Cynthia Clack — Texas Family Law Attorney, Author & Advocate" />
+	<meta property="og:description" content="Texas Board-Certified Family Law attorney with 40+ years of experience in Odessa, TX. Author of Discovering the Club. Advocate for families navigating the most difficult legal challenges." />
+	<meta property="og:url" content="{SITE_URL}/" />
+
+	<!-- WebSite JSON-LD — enables Sitelinks Searchbox eligibility -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"@id": "${SITE_URL}/#website",
+		"name": "Cynthia Clack",
+		"url": "${SITE_URL}",
+		"description": "Official website of Cynthia L. Clack — Texas Board-Certified Family Law attorney, author, and advocate.",
+		"publisher": {
+			"@id": "${SITE_URL}/#organization"
+		}
+	}
+	<\/script>`}
 </svelte:head>
+
 
 <!-- Hero -->
 <section class="relative min-h-[85vh] overflow-hidden bg-bg">
 	<!-- Full hero image — Cynthia on brick wall, subject to the right -->
 	<img
 		src={brickRightSrc}
-		alt=""
+		alt="Cynthia Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
 		class="absolute inset-0 h-full w-full object-cover object-[right_20%]"
 	/>
 	<!-- Fade left so text is readable -->
