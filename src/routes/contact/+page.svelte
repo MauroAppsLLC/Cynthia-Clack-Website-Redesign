@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
@@ -111,7 +112,7 @@
 </section>
 
 <!-- Contact Content -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto grid max-w-[var(--width-content)] gap-12 px-6 md:grid-cols-[1fr_1.5fr]">
 		<!-- Info -->
 		<div>

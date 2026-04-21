@@ -10,6 +10,27 @@
 	const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 	const canonicalUrl = $derived(`${SITE_URL}${page.url.pathname}`);
+
+	// Each time the pathname changes, increment a key so the <div>
+	// is replaced in the DOM and the page-transition animation re-fires.
+	// The `mounted` guard prevents the animation from playing on initial
+	// page load / refresh (only real SPA navigations should trigger it).
+	let transitionKey = $state(0);
+	let currentPath = $state('');
+	let mounted = $state(false);
+
+	$effect(() => {
+		const path = page.url.pathname;
+		if (!mounted) {
+			mounted = true;
+			currentPath = path;
+			return;
+		}
+		if (path !== currentPath) {
+			currentPath = path;
+			transitionKey += 1;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -101,7 +122,11 @@
 
 <Nav />
 <main class="pt-[72px]">
-	{@render children()}
+	{#key transitionKey}
+		<div class={transitionKey > 0 ? 'page-transition' : ''}>
+			{@render children()}
+		</div>
+	{/key}
 </main>
 <Footer />
 

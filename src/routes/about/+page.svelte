@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import brickLeftSrc from '$lib/assets/brick-left.png';
+	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
@@ -46,7 +47,7 @@
 </section>
 
 <!-- Her Story -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<div class="mx-auto max-w-[var(--width-text)]">
 			<div class="mb-10">
@@ -77,7 +78,7 @@
 </section>
 
 <!-- Credentials -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<div class="grid gap-8 md:grid-cols-2">
 			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm">
@@ -104,7 +105,7 @@
 </section>
 
 <!-- Writing + Quote -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<div class="grid items-center gap-12 md:grid-cols-2">
 			<div>
@@ -132,7 +133,7 @@
 </section>
 
 <!-- CTA -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<p class="text-lg text-text/60">For speaking, media, or professional inquiries</p>
 		<div class="mt-6 flex flex-wrap justify-center gap-4">

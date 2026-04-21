@@ -4,6 +4,7 @@
 	import CaseCard from '$lib/components/CaseCard.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
@@ -99,7 +100,7 @@
 </section>
 
 <!-- Landmark Cases -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Landmark Cases" />
 		<div class="grid gap-8 md:grid-cols-2">
@@ -125,7 +126,7 @@
 </section>
 
 <!-- Projects & Creative Works -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects & Creative Works" />
 		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm md:grid-cols-[280px_1fr]">
@@ -150,7 +151,7 @@
 </section>
 
 <!-- Books -->
-<section id="books" class="bg-white py-section">
+<section id="books" class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" />
 		<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
@@ -163,7 +164,7 @@
 </section>
 
 <!-- CTA -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<p class="mx-auto max-w-[var(--width-text)] text-text/70 leading-relaxed">
 			Cynthia's work continues to evolve — from landmark legal cases to published books and

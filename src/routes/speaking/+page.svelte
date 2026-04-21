@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
+	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
@@ -89,7 +90,7 @@
 </section>
 
 <!-- Topics -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Speaking Topics" subtitle="Talks shaped by real experience, not abstractions." />
 		<div class="grid gap-8 md:grid-cols-2">
@@ -106,7 +107,7 @@
 </section>
 
 <!-- Testimonial -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<blockquote class="mx-auto max-w-[var(--width-text)] font-headline text-2xl italic leading-relaxed text-text/70">
 			"It's about hard work, listening to the clients, believing the clients, and working
@@ -117,7 +118,7 @@
 </section>
 
 <!-- CTA -->
-<section class="bg-accent py-20 text-white text-center">
+<section class="bg-accent py-20 text-white text-center" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<h2 class="font-headline text-h2 leading-[var(--text-h2--line-height)]">Invite Cynthia to Speak</h2>
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-white/70">

@@ -7,6 +7,7 @@
 	import headshotSrc from '$lib/assets/Cynthia-Headshot.png';
 	import brickHeroSrc from '$lib/assets/brick-hero.png';
 	import brickRightSrc from '$lib/assets/brick-right.png';
+	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
@@ -94,10 +95,10 @@
 </section>
 
 <!-- Positioning Strip -->
-<StatStrip {stats} />
+<div use:reveal><StatStrip {stats} /></div>
 
 <!-- Featured Book -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-12 px-6 md:grid-cols-2">
 		<div class="flex justify-center">
 			<ImagePlaceholder label="Discovering the Club — Book Cover" aspect="3/4" class="w-full max-w-xs" />
@@ -118,7 +119,7 @@
 </section>
 
 <!-- About Preview -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<SectionHeading title="About Cynthia" />
 		<p class="mx-auto max-w-[var(--width-text)] text-text/70 leading-relaxed">
@@ -134,7 +135,7 @@
 </section>
 
 <!-- Areas of Focus -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Areas of Focus" subtitle="A career defined by courage, range, and conviction." />
 		<div class="grid gap-8 md:grid-cols-3">
@@ -149,7 +150,7 @@
 </section>
 
 <!-- Selected Work -->
-<section class="bg-white py-section">
+<section class="bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Selected Work" subtitle="From the courtroom to the written page." />
 		<div class="grid gap-8 md:grid-cols-3">
@@ -187,7 +188,7 @@
 </section>
 
 <!-- Speaking -->
-<section class="py-section">
+<section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<SectionHeading title="Speaking" subtitle="Insights drawn from four decades inside the legal system." />
 		<div class="mx-auto max-w-[var(--width-text)]">
@@ -209,7 +210,7 @@
 </section>
 
 <!-- Email Signup -->
-<section class="bg-accent py-section text-white">
+<section class="bg-accent py-section text-white" use:reveal={{ delay: 0 }}>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<h2 class="font-headline text-h2 leading-[var(--text-h2--line-height)]">Stay Connected</h2>
 		<p class="mx-auto mt-3 max-w-[var(--width-text)] text-white/70">
