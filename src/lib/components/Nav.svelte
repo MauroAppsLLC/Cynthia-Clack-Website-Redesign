@@ -4,9 +4,10 @@
 	let mobileOpen = $state(false);
 
 	const links = [
+		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
-		{ href: '/work', label: 'Work' },
-		{ href: '/speaking', label: 'Speaking' },
+		{ href: '/work', label: 'Works' },
+		{ href: '/speaking', label: "Speaking's" },
 		{ href: '/contact', label: 'Contact' }
 	];
 
@@ -26,7 +27,7 @@
 	<div class="bg-bg/90 backdrop-blur-md border-b border-secondary">
 		<nav class="mx-auto flex max-w-[var(--width-content)] items-center px-6 py-5">
 			<a href="/" class="font-headline text-xl tracking-wide text-text" onclick={closeMobile}>
-				Cynthia Clack
+				Cynthia L. Clack
 			</a>
 
 			<!-- Desktop nav — centered -->
@@ -45,7 +46,7 @@
 			</ul>
 
 			<!-- Spacer to balance the logo on desktop -->
-			<div class="hidden w-[140px] md:block"></div>
+			<div class="hidden w-[120px] md:block"></div>
 
 			<!-- Mobile hamburger -->
 			<button

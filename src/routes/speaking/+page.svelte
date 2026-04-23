@@ -31,10 +31,10 @@
 </script>
 
 <svelte:head>
-	<title>Speaking Engagements — Cynthia Clack | Family Law Keynote Speaker, Texas</title>
-	<meta name="description" content="Book Cynthia Clack for keynotes, panels, CLEs, and university lectures. Speaking topics include family law, high-conflict custody, wrongful conviction advocacy, women in law, and legal storytelling." />
-	<meta property="og:title" content="Speaking Engagements — Cynthia Clack | Keynote Speaker" />
-	<meta property="og:description" content="Book Cynthia Clack for conferences, bar associations, universities, and CLEs. 40+ years of real-world legal experience brought to every stage and podium." />
+	<title>Speaking Engagements — Cynthia L. Clack | Family Law Keynote Speaker, Texas</title>
+	<meta name="description" content="Book Cynthia L. Clack for keynotes, panels, CLEs, and university lectures. Speaking topics include family law, high-conflict custody, wrongful conviction advocacy, women in law, and legal storytelling." />
+	<meta property="og:title" content="Speaking Engagements — Cynthia L. Clack | Keynote Speaker" />
+	<meta property="og:description" content="Book Cynthia L. Clack for conferences, bar associations, universities, and CLEs. 40+ years of real-world legal experience brought to every stage and podium." />
 	<meta property="og:url" content="{SITE_URL}/speaking" />
 
 	<!-- Speaker / Person JSON-LD -->
@@ -57,7 +57,7 @@
 		],
 		"performerIn": {
 			"@type": "Event",
-			"name": "Speaking Engagement with Cynthia Clack",
+			"name": "Speaking Engagement with Cynthia L. Clack",
 			"organizer": {
 				"@type": "Organization",
 				"name": "Law Offices of Cynthia L. Clack"
@@ -113,7 +113,7 @@
 			"It's about hard work, listening to the clients, believing the clients, and working
 			with the clients."
 		</blockquote>
-		<p class="mt-4 text-sm font-medium text-accent">— Cynthia Clack</p>
+		<p class="mt-4 text-sm font-medium text-accent">— Cynthia L. Clack</p>
 	</div>
 </section>
 

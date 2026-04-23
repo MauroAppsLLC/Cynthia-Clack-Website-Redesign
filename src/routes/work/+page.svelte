@@ -10,10 +10,10 @@
 </script>
 
 <svelte:head>
-	<title>Books, Cases & Creative Work — Cynthia Clack | Texas Attorney & Author</title>
-	<meta name="description" content="Explore Cynthia Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger." />
-	<meta property="og:title" content="Books, Cases & Creative Work — Cynthia Clack" />
-	<meta property="og:description" content="Landmark cases, published books, and creative projects from Texas attorney and author Cynthia Clack — from wrongful conviction advocacy to an internationally performed rock opera." />
+	<title>Books, Cases & Creative Work — Cynthia L. Clack | Texas Attorney & Author</title>
+	<meta name="description" content="Explore Cynthia L. Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger." />
+	<meta property="og:title" content="Books, Cases & Creative Work — Cynthia L. Clack" />
+	<meta property="og:description" content="Landmark cases, published books, and creative projects from Texas attorney and author Cynthia L. Clack — from wrongful conviction advocacy to an internationally performed rock opera." />
 	<meta property="og:url" content="{SITE_URL}/work" />
 
 	<!-- Book JSON-LD for rich results -->

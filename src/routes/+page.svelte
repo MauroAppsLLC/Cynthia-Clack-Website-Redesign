@@ -36,9 +36,9 @@
 </script>
 
 <svelte:head>
-	<title>Cynthia Clack — Texas Family Law Attorney, Author & Advocate | Odessa, TX</title>
-	<meta name="description" content="Cynthia Clack is a Texas Board-Certified Family Law attorney in Odessa, TX with 40+ years of experience in high-conflict custody, complex divorce, and landmark advocacy. Also an acclaimed author." />
-	<meta property="og:title" content="Cynthia Clack — Texas Family Law Attorney, Author & Advocate" />
+	<title>Cynthia L. Clack — Texas Family Law Attorney, Author & Advocate | Odessa, TX</title>
+	<meta name="description" content="Cynthia L. Clack is a Texas Board-Certified Family Law attorney in Odessa, TX with 40+ years of experience in high-conflict custody, complex divorce, and landmark advocacy. Also an acclaimed author." />
+	<meta property="og:title" content="Cynthia L. Clack — Texas Family Law Attorney, Author & Advocate" />
 	<meta property="og:description" content="Texas Board-Certified Family Law attorney with 40+ years of experience in Odessa, TX. Author of Discovering the Club. Advocate for families navigating the most difficult legal challenges." />
 	<meta property="og:url" content="{SITE_URL}/" />
 
@@ -48,7 +48,7 @@
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"@id": "${SITE_URL}/#website",
-		"name": "Cynthia Clack",
+		"name": "Cynthia L. Clack",
 		"url": "${SITE_URL}",
 		"description": "Official website of Cynthia L. Clack — Texas Board-Certified Family Law attorney, author, and advocate.",
 		"publisher": {
@@ -64,7 +64,7 @@
 	<!-- Full hero image — Cynthia on brick wall, subject to the right -->
 	<img
 		src={brickRightSrc}
-		alt="Cynthia Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
+		alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
 		class="absolute inset-0 h-full w-full object-cover object-[right_20%]"
 	/>
 	<!-- Fade left so text is readable -->
@@ -75,7 +75,7 @@
 	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-[var(--width-content)] items-center px-6">
 		<div class="max-w-lg py-24 md:py-32">
 			<h1 class="font-headline text-[3.25rem] leading-[1.1] md:text-[4.5rem]">
-				Cynthia Clack
+				Cynthia L. Clack
 			</h1>
 			<p class="mt-3 text-lg font-medium tracking-widest text-text/70">
 				Attorney. &nbsp;Author. &nbsp;Advocate.
@@ -123,7 +123,7 @@
 		<SectionHeading title="About Cynthia" />
 		<p class="mx-auto max-w-[var(--width-text)] text-text/70 leading-relaxed">
 			A pioneering woman lawyer, a humanitarian, and a creative force to be reckoned with.
-			Cynthia Clack was only the third woman to practice law in the west Texas city of Odessa.
+			Cynthia L. Clack was only the third woman to practice law in the west Texas city of Odessa.
 			Born into a family of legal luminaries, she built a career spanning private practice,
 			public service, teaching, authorship, and creative work.
 		</p>

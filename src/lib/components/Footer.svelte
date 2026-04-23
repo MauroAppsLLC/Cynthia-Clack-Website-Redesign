@@ -2,7 +2,7 @@
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<div class="grid gap-10 md:grid-cols-3">
 			<div>
-				<p class="font-headline text-lg">Cynthia Clack</p>
+				<p class="font-headline text-lg">Cynthia L. Clack</p>
 				<p class="mt-1 text-sm text-text/60">Attorney. Author. Advocate.</p>
 			</div>
 
@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="mt-12 border-t border-secondary pt-6 text-center text-sm text-text/40">
-			<p>&copy; {new Date().getFullYear()} Cynthia Clack. All rights reserved.</p>
+			<p>&copy; {new Date().getFullYear()} Cynthia L. Clack. All rights reserved.</p>
 		</div>
 	</div>
 </footer>

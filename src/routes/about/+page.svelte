@@ -8,9 +8,9 @@
 </script>
 
 <svelte:head>
-	<title>About Cynthia Clack — Texas Family Law Attorney & Author | Biography</title>
+	<title>About Cynthia L. Clack — Texas Family Law Attorney & Author | Biography</title>
 	<meta name="description" content="Learn about Cynthia L. Clack — pioneering Texas attorney, author, and advocate. One of the first women to practice law in Odessa, TX. Daughter of a Texas District Judge, stepdaughter of a Texas Supreme Court Justice." />
-	<meta property="og:title" content="About Cynthia Clack — Texas Family Law Attorney & Author" />
+	<meta property="og:title" content="About Cynthia L. Clack — Texas Family Law Attorney & Author" />
 	<meta property="og:description" content="One of the first women to practice law in west Texas. A career spanning 40+ years in family law, public service, authorship, and creative work." />
 	<meta property="og:url" content="{SITE_URL}/about" />
 </svelte:head>
@@ -20,7 +20,7 @@
 <section class="relative h-[85vh] overflow-hidden bg-bg">
 	<img
 		src={brickLeftSrc}
-		alt="Cynthia Clack photographed in front of a historic brick wall in Odessa, Texas"
+		alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
 		class="absolute inset-0 h-full w-full object-cover object-[left_20%]"
 	/>
 	<!-- Fade right so text is readable -->
@@ -37,7 +37,7 @@
 				Attorney. Author. Advocate.
 			</p>
 			<p class="mt-6 text-text/70 leading-relaxed">
-				For decades, Cynthia Clack has worked inside some of the most difficult corners of
+				For decades, Cynthia L. Clack has worked inside some of the most difficult corners of
 				the legal system — handling complex family matters, advocating for vulnerable clients,
 				and building a career defined by courage, range, and conviction.
 			</p>
