@@ -67,7 +67,7 @@
 						"@type": "Person",
 						"name": "Cynthia L. Clack"
 					},
-					"datePublished": "2024",
+					"datePublished": "2026",
 					"url": "${SITE_URL}/work#books",
 					"description": "A powerful examination of patterns hidden inside the family court system — parental alienation, institutional failure, and the resilience of those caught in between.",
 					"inLanguage": "en"
@@ -181,7 +181,7 @@
 <section id="projects" class="scroll-mt-24 py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects & Creative Works" />
-		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm md:grid-cols-[280px_1fr]">
+		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[280px_1fr]">
 			<ImagePlaceholder label="Eye of the Tiger — Production Photo" aspect="4/3" class="w-full" />
 			<div>
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
@@ -209,7 +209,7 @@
 		<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
 			<BookCard
 				title="Discovering the Club"
-				year="2024"
+				year="2026"
 				href="#"
 				coverSrc={discoveringClubCoverSrc}
 				coverAlt="Discovering the Club book cover by Cynthia L. Clack"

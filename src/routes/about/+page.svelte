@@ -84,7 +84,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 <section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<div class="grid gap-8 md:grid-cols-2">
-			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm">
+			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card">
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
 					Texas Board-Certified in Family Law
 				</h3>
@@ -95,7 +95,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 					international child custody advocacy.
 				</p>
 			</div>
-			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm">
+			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card">
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
 					Service, teaching, and leadership
 				</h3>
@@ -118,25 +118,21 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 					Why writing matters now
 				</h2>
 				<p class="mt-6 text-text/70 leading-relaxed">
-					In addition to legal practice, Cynthia has authored books that translate hard
-					experience into clear public storytelling. Her published works include
-					<em>Doodles the American Poodle</em>, <em>Doodles the American Hero</em>, and
-					her newer legal narrative work, <em>Discovering the Club</em>.
-				</p>
-				<p class="mt-4 text-text/70 leading-relaxed">
-					She also wrote the libretto and lyrics for <em>Eye of the Tiger — A Rock Opera</em>,
-					performed in Odessa and later staged in multiple major Chinese cities.
+					After years of seeing what most people never see inside the legal system, writing
+					became another form of witness. It created space to examine patterns, ask harder
+					questions, and bring difficult realities into the light with clarity and conviction.
 				</p>
 				<blockquote class="mt-8 border-l-4 border-accent/30 pl-6 italic text-text/60">
-					"It's about hard work, listening to the clients, believing the clients, and
-					working with the clients."
+					"There are things I have seen — in families, in courtrooms, and behind closed doors
+					— that are difficult to explain and even harder to ignore. Writing became a way to
+					name what experience had already taught me."
 				</blockquote>
 			</div>
 			<div class="flex flex-col items-center gap-6">
 				<img
 					src={discoveringClubCoverSrc}
 					alt="Discovering the Club book cover by Cynthia L. Clack"
-					class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-sm"
+					class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-card"
 					loading="lazy"
 				/>
 				<Button href="/work#books">Explore the Book</Button>

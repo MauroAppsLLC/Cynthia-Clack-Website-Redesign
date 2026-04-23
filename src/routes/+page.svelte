@@ -106,7 +106,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 			<img
 				src={discoveringClubCoverSrc}
 				alt="Discovering the Club book cover by Cynthia L. Clack"
-				class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-sm"
+				class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-card"
 				loading="lazy"
 			/>
 		</div>
@@ -147,7 +147,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 		<SectionHeading title="Areas of Focus" subtitle="A career defined by courage, range, and conviction." />
 		<div class="grid gap-8 md:grid-cols-3">
 			{#each focusAreas as area}
-				<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm">
+				<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card">
 					<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">{area.title}</h3>
 					<p class="mt-3 text-text/70">{area.description}</p>
 				</div>
@@ -161,7 +161,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Selected Work" subtitle="From the courtroom to the written page." />
 		<div class="grid gap-8 md:grid-cols-3">
-			<div class="md:col-span-2 rounded-[var(--radius-card)] border border-secondary bg-bg p-8 shadow-sm">
+			<div class="md:col-span-2 rounded-[var(--radius-card)] border border-secondary bg-bg p-8 shadow-card">
 				<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">Featured</p>
 				<h3 class="mt-2 font-headline text-h3 leading-[var(--text-h3--line-height)]">Johnny Foote's Story</h3>
 				<p class="mt-1 text-sm text-text/50">1992–2000</p>
@@ -175,14 +175,14 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 				</div>
 			</div>
 			<div class="flex flex-col gap-8">
-				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-sm">
+				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card">
 					<h4 class="font-headline text-lg">The Emily Wu Case</h4>
 					<p class="mt-1 text-sm text-text/50">2000–2005</p>
 					<p class="mt-2 text-sm text-text/70">
 						An international child kidnapping case that made headlines across continents.
 					</p>
 				</div>
-				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-sm">
+				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card">
 					<h4 class="font-headline text-lg">Eye of the Tiger</h4>
 					<p class="mt-1 text-sm text-text/50">Rock Opera, 2005</p>
 					<p class="mt-2 text-sm text-text/70">
