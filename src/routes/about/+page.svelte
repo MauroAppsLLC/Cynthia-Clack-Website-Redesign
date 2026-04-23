@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const brickLeftSrc = '/images/brick-left.png';
+const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
@@ -30,7 +30,7 @@
 
 	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-[var(--width-content)] items-center justify-end px-6">
 		<div class="max-w-lg py-24 md:py-32 text-right">
-			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)] italic">
+			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)]">
 				A life in law. A voice shaped by experience.
 			</h1>
 			<p class="mt-4 text-lg font-medium tracking-wide text-accent">
@@ -38,7 +38,7 @@
 			</p>
 			<p class="mt-6 text-text/70 leading-relaxed">
 				For decades, Cynthia L. Clack has worked inside some of the most difficult corners of
-				the legal system — handling complex family matters, advocating for vulnerable clients,
+				the legal system. Handling complex family matters, advocating for vulnerable clients,
 				and building a career defined by courage, range, and conviction.
 			</p>
 		</div>
@@ -55,21 +55,25 @@
 			</div>
 			<div class="space-y-6 text-text/70 leading-relaxed">
 				<p>
-					Grew up in a family with deep roots in the law, Cynthia L. Clack developed an
-					early understanding of how courts, advocacy, and justice shape real lives. Over
-					the years, she built a career that has spanned private practice, public service,
-					teaching, authorship, and creative work.
+					Cynthia L. Clack was only the third woman to practice law in Odessa, Texas. Her
+					career spans more than four decades of family law, public service, teaching,
+					creative work, and advocacy for clients navigating high-stakes legal crises.
 				</p>
 				<p>
-					Early in her solo practice, she served as a part-time municipal judge, a city
-					attorney, and taught business law at the local community college — experience
-					that broadened both her legal perspective and her public voice.
+					Known for hard work, deep client trust, and courtroom persistence, she has
+					represented families throughout Texas, across the United States, and
+					internationally in complex divorce, custody, and child advocacy matters.
 				</p>
 				<p>
 					Her late father, James Clack, served as a Texas district judge. Her late
 					stepmother, Barbara Culver Clack, was the second woman appointed to the Texas
 					Supreme Court. Her brother Steve is a Texas-based attorney, as was her late
 					brother Gene.
+				</p>
+				<p>
+					Early in her solo practice, she also served as a part-time municipal judge, a
+					city attorney, and a professor of business law, adding public-facing experience
+					that shaped her legal and educational voice.
 				</p>
 			</div>
 		</div>
@@ -85,18 +89,20 @@
 					Texas Board-Certified in Family Law
 				</h3>
 				<p class="mt-4 text-text/70 leading-relaxed">
-					Her work has included high-conflict custody matters, difficult family cases, and
-					advocacy for clients others may overlook.
+					Her legal practice includes high-conflict custody litigation, difficult family
+					matters, and advocacy for clients others may overlook. Notable outcomes include
+					the acquittal of a client in Odessa who falsely confessed to murder and landmark
+					international child custody advocacy.
 				</p>
 			</div>
 			<div class="rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm">
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
-					Beyond the courtroom
+					Service, teaching, and leadership
 				</h3>
 				<p class="mt-4 text-text/70 leading-relaxed">
-					Cynthia's work has never been limited to one lane. In addition to her legal
-					career, she has written books, developed creative projects, and brought
-					difficult truths into public conversation through storytelling.
+					Clack is a Baylor Law graduate and has served in legal education and attorney
+					training. Her community leadership includes service connected to Goodwill-West
+					Texas, Midland/Odessa Symphony and Chorale, and Baylor Law alumni leadership.
 				</p>
 			</div>
 		</div>
@@ -112,19 +118,27 @@
 					Why writing matters now
 				</h2>
 				<p class="mt-6 text-text/70 leading-relaxed">
-					After years of seeing what most people never see inside the legal system,
-					writing became another form of witness. It created space to examine patterns,
-					ask harder questions, and bring difficult realities into the light with clarity
-					and conviction.
+					In addition to legal practice, Cynthia has authored books that translate hard
+					experience into clear public storytelling. Her published works include
+					<em>Doodles the American Poodle</em>, <em>Doodles the American Hero</em>, and
+					her newer legal narrative work, <em>Discovering the Club</em>.
+				</p>
+				<p class="mt-4 text-text/70 leading-relaxed">
+					She also wrote the libretto and lyrics for <em>Eye of the Tiger — A Rock Opera</em>,
+					performed in Odessa and later staged in multiple major Chinese cities.
 				</p>
 				<blockquote class="mt-8 border-l-4 border-accent/30 pl-6 italic text-text/60">
-					"There are things I have seen — in families, in courtrooms, and behind
-					closed doors — that are difficult to explain and even harder to ignore.
-					Writing became a way to name what experience had <em>already taught me.</em>"
+					"It's about hard work, listening to the clients, believing the clients, and
+					working with the clients."
 				</blockquote>
 			</div>
 			<div class="flex flex-col items-center gap-6">
-				<ImagePlaceholder label="Discovering the Club — Book Cover" aspect="3/4" class="w-full max-w-xs" />
+				<img
+					src={discoveringClubCoverSrc}
+					alt="Discovering the Club book cover by Cynthia L. Clack"
+					class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-sm"
+					loading="lazy"
+				/>
 				<Button href="/work#books">Explore the Book</Button>
 			</div>
 		</div>

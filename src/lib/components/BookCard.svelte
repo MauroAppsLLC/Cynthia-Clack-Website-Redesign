@@ -5,14 +5,25 @@
 		title: string;
 		year?: string;
 		href?: string;
+	coverSrc?: string;
+	coverAlt?: string;
 	}
 
-	let { title, year, href }: Props = $props();
+let { title, year, href, coverSrc, coverAlt }: Props = $props();
 </script>
 
 <div class="group text-center">
 	<div class="overflow-hidden rounded-[var(--radius-card)]">
-		<ImagePlaceholder label="Book Cover" aspect="3/4" class="transition-transform duration-300 group-hover:scale-105" />
+		{#if coverSrc}
+			<img
+				src={coverSrc}
+				alt={coverAlt ?? `${title} book cover`}
+				class="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+				loading="lazy"
+			/>
+		{:else}
+			<ImagePlaceholder label="Book Cover" aspect="3/4" class="transition-transform duration-300 group-hover:scale-105" />
+		{/if}
 	</div>
 	<h4 class="mt-4 font-headline text-base font-medium">{title}</h4>
 	{#if year}

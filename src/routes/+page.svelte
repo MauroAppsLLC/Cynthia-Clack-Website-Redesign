@@ -8,6 +8,7 @@
 
 	const headshotSrc = '/images/Cynthia-Headshot.png';
 	const brickRightSrc = '/images/brick-right.png';
+const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const stats = [
@@ -100,7 +101,12 @@
 <section class="py-section" use:reveal>
 	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-12 px-6 md:grid-cols-2">
 		<div class="flex justify-center">
-			<ImagePlaceholder label="Discovering the Club — Book Cover" aspect="3/4" class="w-full max-w-xs" />
+			<img
+				src={discoveringClubCoverSrc}
+				alt="Discovering the Club book cover by Cynthia L. Clack"
+				class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-sm"
+				loading="lazy"
+			/>
 		</div>
 		<div class="max-w-[var(--width-text)]">
 			<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">Featured Book</p>

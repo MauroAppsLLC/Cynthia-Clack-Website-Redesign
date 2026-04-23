@@ -6,6 +6,7 @@
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
+const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
@@ -155,7 +156,13 @@
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" />
 		<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-			<BookCard title="Discovering the Club" year="2024" href="#" />
+			<BookCard
+				title="Discovering the Club"
+				year="2024"
+				href="#"
+				coverSrc={discoveringClubCoverSrc}
+				coverAlt="Discovering the Club book cover by Cynthia L. Clack"
+			/>
 			<BookCard title="Crossing Together" year="2017" href="#" />
 			<BookCard title="Doodles the American Poodle" href="#" />
 			<BookCard title="Doodles the American Hero" href="#" />
