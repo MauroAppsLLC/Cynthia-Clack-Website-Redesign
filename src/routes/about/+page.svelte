@@ -17,7 +17,7 @@
 
 
 <!-- Hero -->
-<section class="relative h-[85vh] overflow-hidden bg-bg">
+<section class="relative min-h-[85vh] overflow-hidden bg-bg">
 	<img
 		src={brickLeftSrc}
 		alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
@@ -28,7 +28,7 @@
 	<!-- Fade bottom into next section -->
 	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
 
-	<div class="relative z-10 mx-auto flex h-full max-w-[var(--width-content)] items-center justify-end px-6">
+	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-[var(--width-content)] items-center justify-end px-6">
 		<div class="max-w-lg py-24 md:py-32 text-right">
 			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)] italic">
 				A life in law. A voice shaped by experience.
