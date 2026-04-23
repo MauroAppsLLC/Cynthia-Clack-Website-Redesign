@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
-	import brickLeftSrc from '$lib/assets/brick-left.png';
 	import { reveal } from '$lib/actions/reveal';
 
+	const brickLeftSrc = '/images/brick-left.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
@@ -17,19 +17,18 @@
 
 
 <!-- Hero -->
-<section class="relative min-h-[75vh] overflow-hidden bg-bg">
+<section class="relative h-[85vh] overflow-hidden bg-bg">
 	<img
 		src={brickLeftSrc}
 		alt="Cynthia Clack photographed in front of a historic brick wall in Odessa, Texas"
-		class="absolute inset-0 h-full w-full object-cover"
-		style="object-position: 20% 30%;"
+		class="absolute inset-0 h-full w-full object-cover object-[left_20%]"
 	/>
 	<!-- Fade right so text is readable -->
 	<div class="pointer-events-none absolute inset-0 bg-gradient-to-l from-bg from-15% via-bg/70 via-40% to-transparent to-65%"></div>
 	<!-- Fade bottom into next section -->
 	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
 
-	<div class="relative z-10 mx-auto flex min-h-[75vh] max-w-[var(--width-content)] items-center justify-end px-6">
+	<div class="relative z-10 mx-auto flex h-full max-w-[var(--width-content)] items-center justify-end px-6">
 		<div class="max-w-lg py-24 md:py-32 text-right">
 			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)] italic">
 				A life in law. A voice shaped by experience.

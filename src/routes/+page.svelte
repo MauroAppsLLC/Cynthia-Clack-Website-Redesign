@@ -4,11 +4,10 @@
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
-	import headshotSrc from '$lib/assets/Cynthia-Headshot.png';
-	import brickHeroSrc from '$lib/assets/brick-hero.png';
-	import brickRightSrc from '$lib/assets/brick-right.png';
 	import { reveal } from '$lib/actions/reveal';
 
+	const headshotSrc = '/images/Cynthia-Headshot.png';
+	const brickRightSrc = '/images/brick-right.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const stats = [
