@@ -74,8 +74,10 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
 
 	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-[var(--width-content)] items-center px-6">
-		<div class="max-w-lg py-24 md:py-32">
-			<h1 class="font-headline text-[3.25rem] leading-[1.1] md:text-[4.5rem]">
+		<div class="max-w-xl py-24 md:py-32">
+			<h1
+				class="font-headline whitespace-nowrap text-[clamp(1.875rem,5vw+1rem,4.5rem)] leading-[1.1]"
+			>
 				Cynthia L. Clack
 			</h1>
 			<p class="mt-3 text-lg font-medium tracking-widest text-text/70">

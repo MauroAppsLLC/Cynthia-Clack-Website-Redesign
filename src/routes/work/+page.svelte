@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import CaseCard from '$lib/components/CaseCard.svelte';
@@ -6,8 +8,39 @@
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
-const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+	const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	const SITE_URL = 'https://cynthiaclack.com';
+
+	const workTabs = [
+		{ id: 'cases' as const, label: 'Landmark Cases' },
+		{ id: 'projects' as const, label: 'Projects' },
+		{ id: 'books' as const, label: 'Books' }
+	];
+
+	type WorkSection = (typeof workTabs)[number]['id'];
+
+	let activeSection = $state<WorkSection>('cases');
+
+	function syncActiveFromHash() {
+		if (!browser) return;
+		const id = window.location.hash.slice(1);
+		if (id === 'cases' || id === 'projects' || id === 'books') {
+			activeSection = id;
+		}
+	}
+
+	function scrollToSection(id: WorkSection) {
+		activeSection = id;
+		const el = document.getElementById(id);
+		el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		history.replaceState(null, '', `#${id}`);
+	}
+
+	onMount(() => {
+		syncActiveFromHash();
+		window.addEventListener('hashchange', syncActiveFromHash);
+		return () => window.removeEventListener('hashchange', syncActiveFromHash);
+	});
 </script>
 
 <svelte:head>
@@ -97,11 +130,29 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-text/70">
 			A career that spans the courtroom, the stage, and the written page.
 		</p>
+		<nav
+			class="mx-auto mt-10 flex max-w-lg flex-wrap justify-center gap-2"
+			aria-label="Jump to a work category"
+		>
+			{#each workTabs as tab}
+				<button
+					type="button"
+					onclick={() => scrollToSection(tab.id)}
+					class={`rounded-full border px-5 py-2.5 text-[13px] font-medium tracking-widest uppercase transition-colors duration-200 cursor-pointer ${
+						activeSection === tab.id
+							? 'border-accent bg-accent text-white'
+							: 'border-secondary bg-white text-text/60 hover:border-accent/40'
+					}`}
+				>
+					{tab.label}
+				</button>
+			{/each}
+		</nav>
 	</div>
 </section>
 
 <!-- Landmark Cases -->
-<section class="bg-white py-section" use:reveal>
+<section id="cases" class="scroll-mt-24 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Landmark Cases" />
 		<div class="grid gap-8 md:grid-cols-2">
@@ -127,7 +178,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 </section>
 
 <!-- Projects & Creative Works -->
-<section class="py-section" use:reveal>
+<section id="projects" class="scroll-mt-24 py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects & Creative Works" />
 		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-sm md:grid-cols-[280px_1fr]">
@@ -152,7 +203,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 </section>
 
 <!-- Books -->
-<section id="books" class="bg-white py-section" use:reveal>
+<section id="books" class="scroll-mt-24 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" />
 		<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
