@@ -102,9 +102,9 @@
 
 
 <!-- Hero -->
-<section class="py-section">
+<section class="pt-6 pb-4 md:py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
-		<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)]">Get in Touch</h1>
+		<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">Get in Touch</h1>
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-text/70">
 			For legal consultations, speaking inquiries, media requests, or general questions.
 		</p>

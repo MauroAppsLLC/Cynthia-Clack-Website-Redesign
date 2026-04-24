@@ -69,23 +69,25 @@
 
 
 <!-- Hero -->
-<section class="py-section">
-	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-12 px-6 md:grid-cols-2">
-		<div>
-			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)]">Speaking</h1>
+<section class="pt-6 pb-4 md:py-section">
+	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-10 px-6 md:grid-cols-2 md:gap-12">
+		<div class="text-center md:text-left" use:reveal>
+			<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">Speaking</h1>
 			<p class="mt-4 text-lg text-text/60">
 				Insights drawn from four decades inside the legal system.
 			</p>
-			<p class="mt-6 text-text/70 leading-relaxed">
+			<p class="mx-auto mt-6 max-w-md text-text/70 leading-relaxed md:mx-0">
 				Cynthia brings hard-won perspective to every stage and podium. Her talks draw on
 				real cases, real families, and the realities of practicing law — not theory, but
 				experience. Available for keynotes, panels, CLEs, and university lectures.
 			</p>
-			<div class="mt-8">
+			<div class="mt-8 flex justify-center md:justify-start">
 				<Button href="/contact">Book Cynthia</Button>
 			</div>
 		</div>
-		<ImagePlaceholder label="Speaking Photo" aspect="4/3" class="w-full max-w-md mx-auto" />
+		<div use:reveal={{ delay: 100 }}>
+			<ImagePlaceholder label="Speaking Photo" aspect="4/3" class="w-full max-w-md mx-auto" />
+		</div>
 	</div>
 </section>
 

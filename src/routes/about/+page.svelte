@@ -17,20 +17,21 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 
 
 <!-- Hero -->
-<section class="relative min-h-[85vh] overflow-hidden bg-bg">
+<section class="relative min-h-[50vh] md:min-h-[85vh] overflow-hidden bg-bg">
 	<img
 		src={brickLeftSrc}
 		alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
-		class="absolute inset-0 h-full w-full object-cover object-[left_20%]"
+		class="absolute inset-0 h-full w-full object-cover object-[25%_10%] md:object-[left_20%]"
 	/>
-	<!-- Fade right so text is readable -->
-	<div class="pointer-events-none absolute inset-0 bg-gradient-to-l from-bg from-15% via-bg/70 via-40% to-transparent to-65%"></div>
+	<!-- Fade right so text is readable (Desktop) / Smooth fade from bottom (Mobile) -->
+	<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg from-[5%] via-bg/60 via-[45%] to-transparent md:bg-gradient-to-l md:from-bg md:from-15% md:via-bg/70 md:via-40% md:to-transparent md:to-65%"></div>
 	<!-- Fade bottom into next section -->
 	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
 
-	<div class="relative z-10 mx-auto flex min-h-[85vh] max-w-[var(--width-content)] items-center justify-end px-6">
-		<div class="max-w-lg py-24 md:py-32 text-right">
-			<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)]">
+	<!-- On mobile, align text to bottom and center. On desktop, align center and right -->
+	<div class="relative z-10 mx-auto flex min-h-[50vh] md:min-h-[85vh] max-w-[var(--width-content)] items-end justify-center pb-8 md:items-center md:justify-end md:pb-0 px-6">
+		<div class="max-w-lg pt-12 pb-4 md:py-32 text-center md:text-right" use:reveal>
+			<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">
 				A life in law. A voice shaped by experience.
 			</h1>
 			<p class="mt-4 text-lg font-medium tracking-wide text-accent">

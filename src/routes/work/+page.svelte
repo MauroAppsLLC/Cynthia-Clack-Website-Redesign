@@ -123,9 +123,9 @@
 
 
 <!-- Hero -->
-<section class="py-section text-center">
+<section class="pt-6 pb-4 md:py-section text-center" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
-		<h1 class="font-headline text-h1 leading-[var(--text-h1--line-height)]">My Work</h1>
+		<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">My Work</h1>
 		<p class="mt-2 font-headline text-xl text-text/60">Books, Projects &amp; Cases</p>
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-text/70">
 			A career that spans the courtroom, the stage, and the written page.
