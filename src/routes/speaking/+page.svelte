@@ -4,6 +4,8 @@
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
+	const speakerPhotoSrc = '/images/speaking.png';
+
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const topics = [
@@ -85,8 +87,13 @@
 				<Button href="/contact">Book Cynthia</Button>
 			</div>
 		</div>
-		<div use:reveal={{ delay: 100 }}>
-			<ImagePlaceholder label="Speaking Photo" aspect="4/3" class="w-full max-w-md mx-auto" />
+		<div class="flex justify-center md:justify-end" use:reveal={{ delay: 100 }}>
+			<img
+				src={speakerPhotoSrc}
+				alt="Cynthia L. Clack - Speaker"
+				class="h-auto w-full max-w-[240px] rounded-[var(--radius-card)] object-cover shadow-sm"
+				loading="lazy"
+			/>
 		</div>
 	</div>
 </section>

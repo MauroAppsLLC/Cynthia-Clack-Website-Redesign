@@ -9,6 +9,9 @@
 	import { reveal } from '$lib/actions/reveal';
 
 	const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg'; 
+  const EyeOfTheTigerSrc = '/images/EyeoftheTiger.png'; 
+
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const workTabs = [
@@ -182,7 +185,12 @@
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects & Creative Works" />
 		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[280px_1fr]">
-			<ImagePlaceholder label="Eye of the Tiger — Production Photo" aspect="4/3" class="w-full" />
+			<img
+				src={EyeOfTheTigerSrc}
+				alt="Eye of the Tiger - A Rock Opera by Cynthia L. Clack"
+				class="object-cover w-full rounded-[var(--radius-card)] object-cover shadow-sm"
+				loading="lazy"
+			/>
 			<div>
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
 					Eye of the Tiger — A Rock Opera
@@ -206,7 +214,7 @@
 <section id="books" class="scroll-mt-24 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" />
-		<div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+		<div class="flex flex-wrap justify-center gap-8">
 			<BookCard
 				title="Discovering the Club"
 				year="2026"
@@ -215,8 +223,10 @@
 				coverAlt="Discovering the Club book cover by Cynthia L. Clack"
 			/>
 			<BookCard title="Crossing Together" year="2017" href="#" />
-			<BookCard title="Doodles the American Poodle" href="#" />
-			<BookCard title="Doodles the American Hero" href="#" />
+			<BookCard title="Doodles the American Hero" year="2007" href="#"
+        coverSrc={doodlesSrc}
+				coverAlt="Doodles the American Hero book cover by Cynthia L. Clack"
+        />
 		</div>
 	</div>
 </section>

@@ -12,7 +12,7 @@
 	let { title, year, href, coverSrc, coverAlt }: Props = $props();
 </script>
 
-<div class="group text-center">
+<div class="group mx-auto w-full max-w-[240px] text-center">
 	<div class="overflow-hidden rounded-[var(--radius-card)]">
 		{#if coverSrc}
 			<img
