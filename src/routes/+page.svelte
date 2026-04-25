@@ -61,21 +61,10 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 
 
 <!-- Hero -->
-<section class="relative min-h-[50vh] md:min-h-[85vh] overflow-hidden bg-bg">
-	<!-- Full hero image — Cynthia on brick wall, subject to the right -->
-	<img
-		src={brickRightSrc}
-		alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
-		class="absolute inset-0 h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
-	/>
-	<!-- Fade left so text is readable (Desktop) / Smooth fade from bottom (Mobile) -->
-	<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg from-[5%] via-bg/60 via-[45%] to-transparent md:bg-gradient-to-r md:from-bg md:from-15% md:via-bg/70 md:via-40% md:to-transparent md:to-65%"></div>
-	<!-- Fade bottom into next section -->
-	<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent"></div>
-
-	<!-- On mobile, align text to bottom. On desktop, align text to center -->
-	<div class="relative z-10 mx-auto flex min-h-[50vh] md:min-h-[85vh] max-w-[var(--width-content)] items-end pb-8 md:items-center md:pb-0 px-6">
-		<div class="max-w-xl pt-12 pb-4 md:py-32 text-center md:text-left" use:reveal>
+<section class="relative overflow-hidden bg-bg flex flex-col md:block">
+	<!-- TEXT CONTENT (Stacked first on mobile, floating on desktop) -->
+	<div class="relative z-10 mx-auto flex w-full max-w-[var(--width-content)] items-center justify-center md:justify-start px-6 pt-16 pb-12 md:py-0 md:min-h-[85vh] order-1 md:order-none">
+		<div class="max-w-xl w-full text-center md:text-left" use:reveal>
 			<h1
 				class="font-headline whitespace-nowrap text-[clamp(1.875rem,5vw+1rem,4.5rem)] leading-[1.1]"
 			>
@@ -94,6 +83,20 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 				<Button href="/work#books" variant="outline">Latest Book</Button>
 			</div>
 		</div>
+	</div>
+
+	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute full-bleed on desktop) -->
+	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
+		<!-- Full hero image — Cynthia on brick wall, subject to the right -->
+		<img
+			src={brickRightSrc}
+			alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
+			class="absolute inset-0 h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
+		/>
+		<!-- Desktop Gradient (Fade left so text is readable) -->
+		<div class="hidden md:block pointer-events-none absolute inset-0 bg-gradient-to-r md:from-bg md:from-15% md:via-bg/70 md:via-40% md:to-transparent md:to-65%"></div>
+		<!-- Fade bottom into next section -->
+		<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-bg to-transparent"></div>
 	</div>
 </section>
 
