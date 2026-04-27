@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import Button from '$lib/components/Button.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import CaseCard from '$lib/components/CaseCard.svelte';
@@ -30,64 +30,62 @@
 	let isScrolling = false;
 	let scrollTimeout: ReturnType<typeof setTimeout>;
 
-	function syncActiveFromHash() {
-		if (!browser) return;
-		const id = window.location.hash.slice(1);
-		if (id === 'cases' || id === 'projects' || id === 'books') {
-			activeSection = id;
-		}
-	}
-
 	function scrollToSection(id: WorkSection) {
 		activeSection = id;
 		const section = document.getElementById(id);
 		if (section) {
 			isScrolling = true;
-			// Target the heading inside the section, not the section top (which has 104px top padding)
+			// Target the heading inside the section
 			const heading = section.querySelector('h2, h3') as HTMLElement | null;
 			const target = heading ?? section;
-			// Subtract 165px to clear sticky nav+tabs and leave comfortable breathing room above the heading
+			// Subtract offset for sticky nav+tabs
 			const y = target.getBoundingClientRect().top + window.scrollY - 165;
 			window.scrollTo({ top: y, behavior: 'smooth' });
-			history.replaceState(history.state, '', `#${id}`);
+			
+			// DO NOT update history state here. SvelteKit manages scroll state based on the current URL.
+			// Altering the hash interferes with SvelteKit's popstate and native scroll restoration.
 			
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => {
 				isScrolling = false;
+				// Sync once smooth scroll finishes to ensure accuracy
+				syncActiveFromScroll();
 			}, 800);
+		}
+	}
+
+	/** Derive the active section from current scroll position. */
+	function syncActiveFromScroll() {
+		if (!browser) return;
+		const ids = ['cases', 'projects', 'books'] as const;
+		let detected: WorkSection = activeSection;
+		for (const id of ids) {
+			const section = document.getElementById(id);
+			if (!section) continue;
+			const heading = section.querySelector('h2, h3') as HTMLElement | null;
+			const rect = (heading ?? section).getBoundingClientRect();
+			// Switch when the heading comes into the top portion of the viewport
+			if (rect.top <= 230 && rect.bottom >= 60) {
+				detected = id;
+			}
+		}
+		if (activeSection !== detected) {
+			activeSection = detected;
 		}
 	}
 
 	function handleScroll() {
 		if (isScrolling || !browser) return;
-		
-		const sections = ['cases', 'projects', 'books'].map(id => document.getElementById(id));
-		let currentSection = activeSection;
-
-		for (const section of sections) {
-			if (!section) continue;
-			// Get the heading element inside the section (skips the 104px py-section top padding)
-			const heading = section.querySelector('h2, h3') as HTMLElement | null;
-			const target = heading ?? section;
-			const rect = target.getBoundingClientRect();
-			// Switch when the heading comes into the top 230px of the viewport (triggers earlier)
-			if (rect.top <= 230 && rect.bottom >= 60) {
-				currentSection = section.id as WorkSection;
-			}
-		}
-
-		if (activeSection !== currentSection) {
-			activeSection = currentSection;
-			history.replaceState(history.state, '', `#${currentSection}`);
-		}
+		syncActiveFromScroll();
 	}
 
-	onMount(() => {
-		syncActiveFromHash();
-		window.addEventListener('hashchange', syncActiveFromHash);
-		return () => {
-			window.removeEventListener('hashchange', syncActiveFromHash);
-		};
+	afterNavigate(() => {
+		// Runs on initial load and after back/forward navigations.
+		// SvelteKit restores scroll position before this runs.
+		// Use a short delay to ensure the browser has finished painting any layout shifts.
+		setTimeout(() => {
+			syncActiveFromScroll();
+		}, 50);
 	});
 </script>
 
