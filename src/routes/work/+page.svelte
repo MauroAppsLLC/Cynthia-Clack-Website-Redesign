@@ -23,6 +23,8 @@
 	type WorkSection = (typeof workTabs)[number]['id'];
 
 	let activeSection = $state<WorkSection>('cases');
+	let isScrolling = false;
+	let scrollTimeout: ReturnType<typeof setTimeout>;
 
 	function syncActiveFromHash() {
 		if (!browser) return;
@@ -34,17 +36,58 @@
 
 	function scrollToSection(id: WorkSection) {
 		activeSection = id;
-		const el = document.getElementById(id);
-		el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		history.replaceState(null, '', `#${id}`);
+		const section = document.getElementById(id);
+		if (section) {
+			isScrolling = true;
+			// Target the heading inside the section, not the section top (which has 104px top padding)
+			const heading = section.querySelector('h2, h3') as HTMLElement | null;
+			const target = heading ?? section;
+			// Subtract 165px to clear sticky nav+tabs and leave comfortable breathing room above the heading
+			const y = target.getBoundingClientRect().top + window.scrollY - 165;
+			window.scrollTo({ top: y, behavior: 'smooth' });
+			history.replaceState(null, '', `#${id}`);
+			
+			clearTimeout(scrollTimeout);
+			scrollTimeout = setTimeout(() => {
+				isScrolling = false;
+			}, 800);
+		}
+	}
+
+	function handleScroll() {
+		if (isScrolling || !browser) return;
+		
+		const sections = ['cases', 'projects', 'books'].map(id => document.getElementById(id));
+		let currentSection = activeSection;
+
+		for (const section of sections) {
+			if (!section) continue;
+			// Get the heading element inside the section (skips the 104px py-section top padding)
+			const heading = section.querySelector('h2, h3') as HTMLElement | null;
+			const target = heading ?? section;
+			const rect = target.getBoundingClientRect();
+			// Switch when the heading comes into the top 230px of the viewport (triggers earlier)
+			if (rect.top <= 230 && rect.bottom >= 60) {
+				currentSection = section.id as WorkSection;
+			}
+		}
+
+		if (activeSection !== currentSection) {
+			activeSection = currentSection;
+			history.replaceState(null, '', `#${currentSection}`);
+		}
 	}
 
 	onMount(() => {
 		syncActiveFromHash();
 		window.addEventListener('hashchange', syncActiveFromHash);
-		return () => window.removeEventListener('hashchange', syncActiveFromHash);
+		return () => {
+			window.removeEventListener('hashchange', syncActiveFromHash);
+		};
 	});
 </script>
+
+<svelte:window onscroll={handleScroll} />
 
 <svelte:head>
 	<title>Books, Cases & Creative Work — Cynthia L. Clack | Texas Attorney & Author</title>
@@ -133,17 +176,23 @@
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-text/70">
 			A career that spans the courtroom, the stage, and the written page.
 		</p>
+	</div>
+</section>
+
+<!-- Sticky Tabs -->
+<div class="sticky top-[65px] z-40 border-b border-secondary/30 bg-bg/95 backdrop-blur-md">
+	<div class="overflow-x-auto scrollbar-none">
 		<nav
-			class="mx-auto mt-10 flex max-w-lg flex-wrap justify-center gap-2"
+			class="mx-auto flex w-max min-w-full max-w-[var(--width-content)] items-center justify-center gap-2 px-4 py-3 md:px-6 md:py-4"
 			aria-label="Jump to a work category"
 		>
 			{#each workTabs as tab}
 				<button
 					type="button"
 					onclick={() => scrollToSection(tab.id)}
-					class={`rounded-full border px-5 py-2.5 text-[13px] font-medium tracking-widest uppercase transition-colors duration-200 cursor-pointer ${
+					class={`cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 text-[11px] font-semibold tracking-widest uppercase transition-colors duration-200 md:px-5 md:py-2.5 md:text-[13px] ${
 						activeSection === tab.id
-							? 'border-accent bg-accent text-white'
+							? 'border-accent bg-accent text-white shadow-sm'
 							: 'border-secondary bg-white text-text/60 hover:border-accent/40'
 					}`}
 				>
@@ -152,22 +201,23 @@
 			{/each}
 		</nav>
 	</div>
-</section>
+</div>
+
 
 <!-- Landmark Cases -->
-<section id="cases" class="scroll-mt-24 bg-white py-section" use:reveal>
+<section id="cases" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Landmark Cases" />
 		<div class="grid gap-8 md:grid-cols-2">
 			<CaseCard
 				title="Johnny Foote's Story"
-				dates="1992–2000"
+				dates="1992-2000"
 				description="Exposing a multi-generational network of parental pimping and systematic abuse."
 				href="#"
 			/>
 			<CaseCard
 				title="The Emily Wu Case"
-				dates="2000–2005"
+				dates="2000-2005"
 				description="Cross-border ritualistic abuse and victim testimony that spanned continents."
 				href="#"
 			/>
@@ -181,21 +231,21 @@
 </section>
 
 <!-- Projects & Creative Works -->
-<section id="projects" class="scroll-mt-24 py-section" use:reveal>
+<section id="projects" class="scroll-mt-32 md:scroll-mt-40 py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects & Creative Works" />
 		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[280px_1fr]">
 			<img
 				src={EyeOfTheTigerSrc}
 				alt="Eye of the Tiger - A Rock Opera by Cynthia L. Clack"
-				class="object-cover w-full rounded-[var(--radius-card)] object-cover shadow-sm"
+				class="aspect-[3/4] w-full object-cover rounded-[var(--radius-card)] shadow-sm"
 				loading="lazy"
 			/>
 			<div>
 				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
 					Eye of the Tiger — A Rock Opera
 				</h3>
-				<p class="mt-1 text-sm text-text/50">2000–2007</p>
+				<p class="mt-1 text-sm text-text/50">2005-2007</p>
 				<p class="mt-4 text-text/70 leading-relaxed">
 					Authored a rock opera in 2005, performed at Odessa's Globe of the Great Southwest
 					Theater. Cynthia received two invitations from the Chinese government to perform
@@ -211,7 +261,7 @@
 </section>
 
 <!-- Books -->
-<section id="books" class="scroll-mt-24 bg-white py-section" use:reveal>
+<section id="books" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" />
 		<div class="flex flex-wrap justify-center gap-8">

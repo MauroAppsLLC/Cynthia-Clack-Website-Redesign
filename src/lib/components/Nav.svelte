@@ -93,9 +93,9 @@
 <header class="fixed top-0 left-0 right-0 z-50">
 	<div class="h-px bg-secondary"></div>
 	<div
-		class="border-b border-secondary bg-bg/90 backdrop-blur-md transition-[padding,box-shadow,backdrop-filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] {scrolled
-			? 'py-3 shadow-card backdrop-blur-lg'
-			: 'py-5 backdrop-blur-md'}"
+		class="border-b border-secondary bg-bg/90 py-4 backdrop-blur-md transition-[box-shadow,backdrop-filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] {scrolled
+			? 'shadow-card backdrop-blur-lg'
+			: 'backdrop-blur-md'}"
 	>
 		<nav class="mx-auto flex max-w-[var(--width-content)] items-center px-6">
 			<a
