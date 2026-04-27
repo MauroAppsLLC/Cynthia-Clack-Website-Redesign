@@ -1,27 +1,18 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const SITE_URL = 'https://cynthiaclack.com';
-</script>
 
-<svelte:head>
-	<title>Contact Cynthia L. Clack — Family Law Attorney in Odessa, TX | (432) 337-8511</title>
-	<meta name="description" content="Contact the Law Offices of Cynthia L. Clack in Odessa, TX. Reach out for family law consultations, speaking inquiries, media requests, or general questions. Call (432) 337-8511." />
-	<meta property="og:title" content="Contact Cynthia L. Clack — Family Law Attorney | Odessa, TX" />
-	<meta property="og:description" content="Get in touch with Texas family law attorney Cynthia L. Clack. Office at 522 N Grant Ave, Odessa, TX. Call (432) 337-8511 or send a message online." />
-	<meta property="og:url" content="{SITE_URL}/contact" />
-
-	<!-- LocalBusiness + LegalService JSON-LD — critical for local SEO / Google local pack -->
-	{@html `<script type="application/ld+json">
-	{
+	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": ["LegalService", "LocalBusiness"],
-		"@id": "${SITE_URL}/#organization",
+		"@id": `${SITE_URL}/#organization`,
 		"name": "Law Offices of Cynthia L. Clack",
 		"alternateName": "Cynthia L. Clack Attorney",
 		"description": "Texas Board-Certified Family Law attorney offering legal services in high-conflict custody, complex divorce, and advocacy for families in Odessa, TX and the surrounding Permian Basin region.",
-		"url": "${SITE_URL}",
+		"url": SITE_URL,
 		"telephone": "+14323378511",
 		"email": "cynthia.l.clack@gmail.com",
 		"address": {
@@ -91,15 +82,20 @@
 			]
 		},
 		"founder": {
-			"@id": "${SITE_URL}/#person"
+			"@id": `${SITE_URL}/#person`
 		},
 		"sameAs": [
-			"${SITE_URL}"
+			SITE_URL
 		]
-	}
-	<\/script>`}
-</svelte:head>
+	};
+</script>
 
+<SEO 
+	title="Contact Cynthia L. Clack — Family Law Attorney in Odessa, TX | (432) 337-8511"
+	description="Contact the Law Offices of Cynthia L. Clack in Odessa, TX. Reach out for family law consultations, speaking inquiries, media requests, or general questions. Call (432) 337-8511."
+	keywords={["Odessa TX Law Office", "Contact Family Lawyer Odessa", "hire Cynthia Clack"]}
+	{jsonLd}
+/>
 
 <!-- Hero -->
 <section class="pt-6 pb-4 md:py-section" use:reveal={{ distance: 10, duration: 600 }}>

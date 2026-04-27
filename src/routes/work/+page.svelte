@@ -5,6 +5,7 @@
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import CaseCard from '$lib/components/CaseCard.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { getByCategory } from '$lib/data/work';
 
@@ -87,20 +88,8 @@
 			syncActiveFromScroll();
 		}, 50);
 	});
-</script>
 
-<svelte:window onscroll={handleScroll} />
-
-<svelte:head>
-	<title>Books, Cases &amp; Creative Work — Cynthia L. Clack | Texas Attorney &amp; Author</title>
-	<meta name="description" content="Explore Cynthia L. Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger." />
-	<meta property="og:title" content="Books, Cases &amp; Creative Work — Cynthia L. Clack" />
-	<meta property="og:description" content="Landmark cases, published books, and creative projects from Texas attorney and author Cynthia L. Clack — from wrongful conviction advocacy to an internationally performed rock opera." />
-	<meta property="og:url" content="{SITE_URL}/work" />
-
-	<!-- Book JSON-LD for rich results -->
-	{@html `<script type="application/ld+json">
-	{
+	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "ItemList",
 		"name": "Books by Cynthia L. Clack",
@@ -116,7 +105,7 @@
 						"name": "Cynthia L. Clack"
 					},
 					"datePublished": "2026",
-					"url": "${SITE_URL}/work#books",
+					"url": `${SITE_URL}/work#books`,
 					"description": "A powerful examination of patterns hidden inside the family court system — parental alienation, institutional failure, and the resilience of those caught in between.",
 					"inLanguage": "en"
 				}
@@ -132,7 +121,7 @@
 						"name": "Cynthia L. Clack"
 					},
 					"datePublished": "2017",
-					"url": "${SITE_URL}/work#books",
+					"url": `${SITE_URL}/work#books`,
 					"inLanguage": "en"
 				}
 			},
@@ -146,7 +135,7 @@
 						"@type": "Person",
 						"name": "Cynthia L. Clack"
 					},
-					"url": "${SITE_URL}/work#books",
+					"url": `${SITE_URL}/work#books`,
 					"inLanguage": "en"
 				}
 			},
@@ -160,15 +149,22 @@
 						"@type": "Person",
 						"name": "Cynthia L. Clack"
 					},
-					"url": "${SITE_URL}/work#books",
+					"url": `${SITE_URL}/work#books`,
 					"inLanguage": "en"
 				}
 			}
 		]
-	}
-	<\/script>`}
-</svelte:head>
+	};
+</script>
 
+<svelte:window onscroll={handleScroll} />
+
+<SEO 
+	title="Books, Cases &amp; Creative Work — Cynthia L. Clack | Texas Attorney &amp; Author"
+	description="Explore Cynthia L. Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger."
+	keywords={["Cynthia Clack books", "Discovering the Club", "Eye of the Tiger rock opera", "Texas landmark cases"]}
+	{jsonLd}
+/>
 
 <!-- Hero -->
 <section class="pt-6 pb-4 md:py-section text-center" use:reveal={{ distance: 10, duration: 600 }}>

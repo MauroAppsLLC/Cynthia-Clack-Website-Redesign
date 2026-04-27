@@ -4,6 +4,7 @@
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const headshotSrc = '/images/Cynthia-Headshot.png';
@@ -34,31 +35,25 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 				"Turning decades of courtroom experience into books that illuminate the human side of the legal system."
 		}
 	];
-</script>
-
-<svelte:head>
-	<title>Cynthia L. Clack — Texas Family Law Attorney, Author & Advocate | Odessa, TX</title>
-	<meta name="description" content="Cynthia L. Clack is a Texas Board-Certified Family Law attorney in Odessa, TX with 40+ years of experience in high-conflict custody, complex divorce, and landmark advocacy. Also an acclaimed author." />
-	<meta property="og:title" content="Cynthia L. Clack — Texas Family Law Attorney, Author & Advocate" />
-	<meta property="og:description" content="Texas Board-Certified Family Law attorney with 40+ years of experience in Odessa, TX. Author of Discovering the Club. Advocate for families navigating the most difficult legal challenges." />
-	<meta property="og:url" content="{SITE_URL}/" />
-
-	<!-- WebSite JSON-LD — enables Sitelinks Searchbox eligibility -->
-	{@html `<script type="application/ld+json">
-	{
+	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
-		"@id": "${SITE_URL}/#website",
+		"@id": `${SITE_URL}/#website`,
 		"name": "Cynthia L. Clack",
-		"url": "${SITE_URL}",
+		"url": SITE_URL,
 		"description": "Official website of Cynthia L. Clack — Texas Board-Certified Family Law attorney, author, and advocate.",
 		"publisher": {
-			"@id": "${SITE_URL}/#organization"
+			"@id": `${SITE_URL}/#organization`
 		}
-	}
-	<\/script>`}
-</svelte:head>
+	};
+</script>
 
+<SEO 
+	title="Cynthia L. Clack — Texas Family Law Attorney, Author & Advocate | Odessa, TX"
+	description="Cynthia L. Clack is a Texas Board-Certified Family Law attorney in Odessa, TX with 40+ years of experience in high-conflict custody, complex divorce, and landmark advocacy. Also an acclaimed author."
+	keywords={["Odessa TX Family Lawyer", "complex divorce", "landmark advocacy"]}
+	{jsonLd}
+/>
 
 <!-- Hero -->
 <section class="relative overflow-hidden bg-bg flex flex-col md:block">

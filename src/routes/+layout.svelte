@@ -7,9 +7,6 @@
 	let { children } = $props();
 
 	const SITE_URL = 'https://cynthiaclack.com';
-	const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
-
-	const canonicalUrl = $derived(`${SITE_URL}${page.url.pathname}`);
 
 	// Each time the pathname changes, increment a key so the <div>
 	// is replaced in the DOM and the page-transition animation re-fires.
@@ -34,31 +31,6 @@
 </script>
 
 <svelte:head>
-	<title>Cynthia L. Clack — Attorney. Author. Advocate.</title>
-	<meta name="description" content="Cynthia L. Clack is a Texas Board-Certified Family Law attorney, author, and advocate with over 40 years of legal experience in Odessa, TX. Handling high-conflict custody, complex divorce, and landmark advocacy cases." />
-
-	<!-- Canonical -->
-	<link rel="canonical" href={canonicalUrl} />
-
-	<!-- Open Graph -->
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Cynthia L. Clack" />
-	<meta property="og:title" content="Cynthia L. Clack — Attorney. Author. Advocate." />
-	<meta property="og:description" content="Texas Board-Certified Family Law attorney with 40+ years of experience. Author of Discovering the Club. Advocate for families and the overlooked." />
-	<meta property="og:url" content={canonicalUrl} />
-	<meta property="og:image" content={OG_IMAGE} />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="Cynthia L. Clack — Attorney, Author, Advocate" />
-	<meta property="og:locale" content="en_US" />
-
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Cynthia L. Clack — Attorney. Author. Advocate." />
-	<meta name="twitter:description" content="Texas Board-Certified Family Law attorney, author, and advocate with 40+ years of experience in Odessa, TX." />
-	<meta name="twitter:image" content={OG_IMAGE} />
-	<meta name="twitter:image:alt" content="Cynthia L. Clack — Attorney, Author, Advocate" />
-
 	<!-- Organization + Person JSON-LD (site-wide entity establishment) -->
 	{@html `<script type="application/ld+json">
 	{

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getRelated } from '$lib/data/work';
 	import Button from '$lib/components/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	let { data } = $props();
@@ -32,18 +33,71 @@
 		projects: 'tag-projects',
 		books:    'tag-books',
 	};
+
+	const breadcrumbJsonLd = $derived({
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Work",
+				"item": `${SITE_URL}/work`
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": categoryLabel[item.category],
+				"item": `${SITE_URL}/work#${item.category}`
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": item.title,
+				"item": `${SITE_URL}/work/${item.slug}`
+			}
+		]
+	});
+
+	const itemJsonLd = $derived(item.category === 'books' ? {
+		"@context": "https://schema.org",
+		"@type": "Book",
+		"name": item.title,
+		"author": {
+			"@type": "Person",
+			"name": "Cynthia L. Clack"
+		},
+		"url": `${SITE_URL}/work/${item.slug}`,
+		"description": item.summary,
+		...(item.year ? { "datePublished": item.year } : {})
+	} : {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": item.title,
+		"author": {
+			"@type": "Person",
+			"name": "Cynthia L. Clack"
+		},
+		"description": item.summary,
+		"url": `${SITE_URL}/work/${item.slug}`
+	});
+
+	const jsonLd = $derived([breadcrumbJsonLd, itemJsonLd]);
+	const type = $derived(item.category === 'books' ? 'book' : 'article');
 </script>
 
-<svelte:head>
-	<title>{item.title} — Cynthia L. Clack</title>
-	<meta name="description" content={item.summary} />
-	<meta property="og:title" content="{item.title} — Cynthia L. Clack" />
-	<meta property="og:description" content={item.summary} />
-	<meta property="og:url" content="{SITE_URL}/work/{item.slug}" />
-	{#if item.coverSrc}
-		<meta property="og:image" content="{SITE_URL}{item.coverSrc}" />
-	{/if}
-</svelte:head>
+<SEO 
+	title="{item.title} — Cynthia L. Clack"
+	description={item.summary}
+	image={item.coverSrc ?? undefined}
+	imageAlt={item.coverAlt ?? item.title}
+	{type}
+	{jsonLd}
+	article={item.category !== 'books' ? {
+		section: categoryLabel[item.category],
+		tags: [item.tag ?? categoryLabel[item.category], "Law", "Advocacy"]
+	} : undefined}
+/>
 
 <!-- ─── Back breadcrumb ─────────────────────────────────────────────────────── -->
 <nav class="breadcrumb" aria-label="Breadcrumb" use:reveal>

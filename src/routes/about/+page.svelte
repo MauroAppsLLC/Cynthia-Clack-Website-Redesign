@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const brickLeftSrc = '/images/brick-left.png';
@@ -7,14 +8,11 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 
-<svelte:head>
-	<title>About Cynthia L. Clack — Texas Family Law Attorney & Author | Biography</title>
-	<meta name="description" content="Learn about Cynthia L. Clack — pioneering Texas attorney, author, and advocate. One of the first women to practice law in Odessa, TX. Daughter of a Texas District Judge, stepdaughter of a Texas Supreme Court Justice." />
-	<meta property="og:title" content="About Cynthia L. Clack — Texas Family Law Attorney & Author" />
-	<meta property="og:description" content="One of the first women to practice law in west Texas. A career spanning 40+ years in family law, public service, authorship, and creative work." />
-	<meta property="og:url" content="{SITE_URL}/about" />
-</svelte:head>
-
+<SEO 
+	title="About Cynthia L. Clack — Texas Family Law Attorney & Author | Biography"
+	description="Learn about Cynthia L. Clack — pioneering Texas attorney, author, and advocate. One of the first women to practice law in Odessa, TX. Daughter of a Texas District Judge, stepdaughter of a Texas Supreme Court Justice."
+	keywords={["Cynthia Clack biography", "woman lawyer Odessa TX", "Texas District Judge daughter"]}
+/>
 
 <!-- Hero -->
 <section class="relative overflow-hidden bg-bg flex flex-col md:block">

@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const speakerPhotoSrc = '/images/speaking.png';
@@ -30,23 +31,12 @@
 				'Four decades as a pioneering woman attorney in west Texas — lessons, battles, and breakthroughs.'
 		}
 	];
-</script>
-
-<svelte:head>
-	<title>Speaking Engagements — Cynthia L. Clack | Family Law Keynote Speaker, Texas</title>
-	<meta name="description" content="Book Cynthia L. Clack for keynotes, panels, CLEs, and university lectures. Speaking topics include family law, high-conflict custody, wrongful conviction advocacy, women in law, and legal storytelling." />
-	<meta property="og:title" content="Speaking Engagements — Cynthia L. Clack | Keynote Speaker" />
-	<meta property="og:description" content="Book Cynthia L. Clack for conferences, bar associations, universities, and CLEs. 40+ years of real-world legal experience brought to every stage and podium." />
-	<meta property="og:url" content="{SITE_URL}/speaking" />
-
-	<!-- Speaker / Person JSON-LD -->
-	{@html `<script type="application/ld+json">
-	{
+	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "Person",
-		"@id": "${SITE_URL}/#person",
+		"@id": `${SITE_URL}/#person`,
 		"name": "Cynthia L. Clack",
-		"url": "${SITE_URL}",
+		"url": SITE_URL,
 		"description": "Texas Board-Certified Family Law attorney and keynote speaker with 40+ years of legal experience. Available for conferences, bar associations, universities, community organizations, and CLEs.",
 		"knowsAbout": [
 			"Family Law",
@@ -65,10 +55,15 @@
 				"name": "Law Offices of Cynthia L. Clack"
 			}
 		}
-	}
-	<\/script>`}
-</svelte:head>
+	};
+</script>
 
+<SEO 
+	title="Speaking Engagements — Cynthia L. Clack | Family Law Keynote Speaker, Texas"
+	description="Book Cynthia L. Clack for keynotes, panels, CLEs, and university lectures. Speaking topics include family law, high-conflict custody, wrongful conviction advocacy, women in law, and legal storytelling."
+	keywords={["keynote speaker Texas", "legal storytelling speaker", "women in law speaking"]}
+	{jsonLd}
+/>
 
 <!-- Hero -->
 <section class="pt-6 pb-4 md:py-section">
