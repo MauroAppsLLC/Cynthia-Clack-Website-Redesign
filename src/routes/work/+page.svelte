@@ -5,12 +5,16 @@
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import CaseCard from '$lib/components/CaseCard.svelte';
 	import BookCard from '$lib/components/BookCard.svelte';
-	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { getByCategory } from '$lib/data/work';
+
+	const cases    = getByCategory('cases');
+	const projects = getByCategory('projects');
+	const books    = getByCategory('books');
 
 	const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
-	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg'; 
-  const EyeOfTheTigerSrc = '/images/EyeoftheTiger.png'; 
+	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg';
+  const EyeOfTheTigerSrc = '/images/EyeoftheTiger.png';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
@@ -90,9 +94,9 @@
 <svelte:window onscroll={handleScroll} />
 
 <svelte:head>
-	<title>Books, Cases & Creative Work — Cynthia L. Clack | Texas Attorney & Author</title>
+	<title>Books, Cases &amp; Creative Work — Cynthia L. Clack | Texas Attorney &amp; Author</title>
 	<meta name="description" content="Explore Cynthia L. Clack's landmark legal cases, published books (Discovering the Club, Crossing Together, Doodles series), and creative projects including the internationally performed rock opera Eye of the Tiger." />
-	<meta property="og:title" content="Books, Cases & Creative Work — Cynthia L. Clack" />
+	<meta property="og:title" content="Books, Cases &amp; Creative Work — Cynthia L. Clack" />
 	<meta property="og:description" content="Landmark cases, published books, and creative projects from Texas attorney and author Cynthia L. Clack — from wrongful conviction advocacy to an internationally performed rock opera." />
 	<meta property="og:url" content="{SITE_URL}/work" />
 
@@ -207,25 +211,16 @@
 <!-- Landmark Cases -->
 <section id="cases" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
-		<SectionHeading title="Landmark Cases" />
+		<SectionHeading title="Landmark Cases" subtitle="Four decades of fighting for justice — case by case." />
 		<div class="grid gap-8 md:grid-cols-2">
-			<CaseCard
-				title="Johnny Foote's Story"
-				dates="1992-2000"
-				description="Exposing a multi-generational network of parental pimping and systematic abuse."
-				href="#"
-			/>
-			<CaseCard
-				title="The Emily Wu Case"
-				dates="2000-2005"
-				description="Cross-border ritualistic abuse and victim testimony that spanned continents."
-				href="#"
-			/>
-		</div>
-		<div class="mt-8 text-center">
-			<button class="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline cursor-pointer">
-				View detailed case examples <span aria-hidden="true">&rsaquo;</span>
-			</button>
+			{#each cases as c}
+				<CaseCard
+					title={c.title}
+					dates={c.dates ?? ''}
+					description={c.summary}
+					href="/work/{c.slug}"
+				/>
+			{/each}
 		</div>
 	</div>
 </section>
@@ -233,29 +228,43 @@
 <!-- Projects & Creative Works -->
 <section id="projects" class="scroll-mt-32 md:scroll-mt-40 py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
-		<SectionHeading title="Projects & Creative Works" />
-		<div class="grid items-center gap-10 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[280px_1fr]">
-			<img
-				src={EyeOfTheTigerSrc}
-				alt="Eye of the Tiger - A Rock Opera by Cynthia L. Clack"
-				class="aspect-[3/4] w-full object-cover rounded-[var(--radius-card)] shadow-sm"
-				loading="lazy"
-			/>
-			<div>
-				<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">
-					Eye of the Tiger — A Rock Opera
-				</h3>
-				<p class="mt-1 text-sm text-text/50">2005-2007</p>
-				<p class="mt-4 text-text/70 leading-relaxed">
-					Authored a rock opera in 2005, performed at Odessa's Globe of the Great Southwest
-					Theater. Cynthia received two invitations from the Chinese government to perform
-					the musical more than eight times in Beijing, Shanghai, and several other major
-					cities in China in 2007.
-				</p>
-				<div class="mt-6">
-					<Button href="#" variant="outline">Explore Project &rsaquo;</Button>
+		<SectionHeading title="Projects &amp; Creative Works" subtitle="Beyond the courtroom — storytelling as advocacy." />
+		<div class="grid gap-8 md:grid-cols-2">
+			<!-- Eye of the Tiger — featured with image -->
+			<div class="grid items-center gap-8 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[200px_1fr] md:col-span-2">
+				<img
+					src={EyeOfTheTigerSrc}
+					alt="Eye of the Tiger - A Rock Opera by Cynthia L. Clack"
+					class="aspect-[3/4] w-full object-cover rounded-[var(--radius-card)] shadow-sm"
+					loading="lazy"
+				/>
+				<div>
+					<span class="inline-block mb-2 rounded-full bg-[#f0ece8] px-3 py-1 text-[11px] font-bold tracking-widest uppercase text-[#7A3E1F]">🎭 Creative Project</span>
+					<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)] mt-1">
+						Eye of the Tiger — A Rock Opera
+					</h3>
+					<p class="mt-1 text-sm text-text/50">2005–2007</p>
+					<p class="mt-4 text-text/70 leading-relaxed">
+						Authored a rock opera in 2005, performed at Odessa's Globe of the Great Southwest
+						Theater. Cynthia received two invitations from the Chinese government to perform
+						the musical more than eight times in Beijing, Shanghai, and several other major
+						cities in China in 2007.
+					</p>
+					<div class="mt-6">
+						<Button href="/work/eye-of-the-tiger" variant="outline">Read Full Story &rsaquo;</Button>
+					</div>
 				</div>
 			</div>
+
+			<!-- Other projects -->
+			{#each projects.filter(p => p.slug !== 'eye-of-the-tiger') as proj}
+				<CaseCard
+					title={proj.title}
+					dates={proj.dates ?? ''}
+					description={proj.summary}
+					href="/work/{proj.slug}"
+				/>
+			{/each}
 		</div>
 	</div>
 </section>
@@ -263,20 +272,17 @@
 <!-- Books -->
 <section id="books" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
-		<SectionHeading title="Books" />
+		<SectionHeading title="Books" subtitle="From the courtroom to the page — stories that change lives." />
 		<div class="flex flex-wrap justify-center gap-8">
-			<BookCard
-				title="Discovering the Club"
-				year="2026"
-				href="#"
-				coverSrc={discoveringClubCoverSrc}
-				coverAlt="Discovering the Club book cover by Cynthia L. Clack"
-			/>
-			<BookCard title="Crossing Together" year="2017" href="#" />
-			<BookCard title="Doodles the American Hero" year="2007" href="#"
-        coverSrc={doodlesSrc}
-				coverAlt="Doodles the American Hero book cover by Cynthia L. Clack"
-        />
+			{#each books as book}
+				<BookCard
+					title={book.title}
+					year={book.year}
+					href="/work/{book.slug}"
+					coverSrc={book.coverSrc}
+					coverAlt={book.coverAlt}
+				/>
+			{/each}
 		</div>
 	</div>
 </section>
