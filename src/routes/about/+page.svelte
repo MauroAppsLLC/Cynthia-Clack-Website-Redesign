@@ -19,7 +19,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 <!-- Hero -->
 <section class="relative overflow-hidden bg-bg flex flex-col md:block">
 	<!-- TEXT CONTENT (Stacked first on mobile, floating on desktop) -->
-	<div class="relative z-10 mx-auto flex w-full max-w-[var(--width-content)] items-center justify-center md:justify-end px-6 pt-16 pb-12 md:py-0 md:min-h-[85vh] order-1 md:order-none">
+	<div class="relative z-10 mx-auto flex w-full max-w-[1440px] xl:max-w-[1600px] items-center justify-center md:justify-end px-6 pt-16 pb-12 md:py-0 md:px-12 md:min-h-[85vh] order-1 md:order-none">
 		<div class="max-w-lg w-full text-center md:text-right" use:reveal>
 			<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">
 				A life in law. A voice shaped by experience.
