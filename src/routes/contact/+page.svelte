@@ -102,7 +102,7 @@
 
 
 <!-- Hero -->
-<section class="pt-6 pb-4 md:py-section" use:reveal>
+<section class="pt-6 pb-4 md:py-section" use:reveal={{ distance: 10, duration: 600 }}>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">Get in Touch</h1>
 		<p class="mx-auto mt-4 max-w-[var(--width-text)] text-text/70">

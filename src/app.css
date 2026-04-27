@@ -43,11 +43,20 @@ h1, h2, h3, h4 {
 	font-family: var(--font-headline);
 }
 
-/* Motion + depth tokens (aligned with page-enter / reveal easing) */
+/* ─── Motion design tokens ─────────────────────────────────────────── */
 :root {
+	/* Deceleration — elements settle gently into place (Material Design standard) */
+	--ease-decel: cubic-bezier(0.0, 0.0, 0.2, 1);
+	/* Softer organic curve for micro-interactions */
+	--ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+	/* Legacy — kept for Nav / small UI where overshoot is fine */
 	--ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+
 	--duration-short: 200ms;
 	--duration-medium: 300ms;
+	--duration-reveal: 700ms;
+	--duration-reveal-fast: 500ms;
+	--duration-reveal-slow: 900ms;
 }
 
 /* Single card / panel shadow used across the site */
@@ -66,7 +75,7 @@ h1, h2, h3, h4 {
 @keyframes page-enter {
 	from {
 		opacity: 0;
-		transform: translateY(18px);
+		transform: translateY(8px);
 	}
 	to {
 		opacity: 1;
@@ -75,24 +84,30 @@ h1, h2, h3, h4 {
 }
 
 .page-transition {
-	animation: page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation: page-enter 0.5s var(--ease-decel) both;
 }
 
 /* ─── Scroll-reveal ──────────────────────────────────────────────── */
+/*
+ * CSS custom-property hooks allow reveal.ts to override per-element:
+ *   --reveal-y        (translateY distance, default 16px)
+ *   --reveal-duration  (transition length, default 700ms)
+ *   --reveal-delay     (transition delay, default 0ms)
+ */
 .reveal-init {
 	opacity: 0;
-	transform: translateY(28px);
+	transform: translateY(var(--reveal-y, 16px));
 	transition:
-		opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-		transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+		opacity var(--reveal-duration, 700ms) var(--ease-decel) var(--reveal-delay, 0ms),
+		transform var(--reveal-duration, 700ms) var(--ease-decel) var(--reveal-delay, 0ms);
 }
 
 .reveal-visible {
 	opacity: 1;
 	transform: translateY(0);
 	transition:
-		opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-		transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+		opacity var(--reveal-duration, 700ms) var(--ease-decel) var(--reveal-delay, 0ms),
+		transform var(--reveal-duration, 700ms) var(--ease-decel) var(--reveal-delay, 0ms);
 }
 
 /* Respect reduced-motion preference */
@@ -109,6 +124,8 @@ h1, h2, h3, h4 {
 	:root {
 		--duration-short: 0.01ms;
 		--duration-medium: 0.01ms;
+		--duration-reveal: 0.01ms;
+		--duration-reveal-fast: 0.01ms;
+		--duration-reveal-slow: 0.01ms;
 	}
 }
-

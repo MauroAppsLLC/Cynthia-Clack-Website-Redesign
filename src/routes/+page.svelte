@@ -64,7 +64,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 <section class="relative overflow-hidden bg-bg flex flex-col md:block">
 	<!-- TEXT CONTENT (Stacked first on mobile, floating on desktop) -->
 	<div class="relative z-10 mx-auto flex w-full max-w-[var(--width-content)] items-center justify-center md:justify-start px-6 pt-16 pb-12 md:py-0 md:min-h-[85vh] order-1 md:order-none">
-		<div class="max-w-xl w-full text-center md:text-left" use:reveal>
+		<div class="max-w-xl w-full text-center md:text-left" use:reveal={{ distance: 10, duration: 600 }}>
 			<h1
 				class="font-headline whitespace-nowrap text-[clamp(1.875rem,5vw+1rem,4.5rem)] leading-[1.1]"
 			>
@@ -101,7 +101,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 </section>
 
 <!-- Positioning Strip -->
-<div use:reveal><StatStrip {stats} /></div>
+<div use:reveal={{ distance: 12, delay: 80 }}><StatStrip {stats} /></div>
 
 <!-- Featured Book -->
 <section class="py-section" use:reveal>
@@ -221,7 +221,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 </section>
 
 <!-- Email Signup -->
-<section class="bg-accent py-section text-white" use:reveal={{ delay: 0 }}>
+<section class="bg-accent py-section text-white" use:reveal={{ distance: 10 }}>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
 		<h2 class="font-headline text-h2 leading-[var(--text-h2--line-height)]">Stay Connected</h2>
 		<p class="mx-auto mt-3 max-w-[var(--width-text)] text-white/70">

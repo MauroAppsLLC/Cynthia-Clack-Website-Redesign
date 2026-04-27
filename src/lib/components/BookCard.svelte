@@ -18,11 +18,11 @@
 			<img
 				src={coverSrc}
 				alt={coverAlt ?? `${title} book cover`}
-				class="aspect-[3/4] w-full object-cover transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+				class="aspect-[3/4] w-full object-cover transition-transform duration-300 ease-[cubic-bezier(0,0,0.2,1)] group-hover:scale-105"
 				loading="lazy"
 			/>
 		{:else}
-			<ImagePlaceholder label="Book Cover" aspect="3/4" class="transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
+			<ImagePlaceholder label="Book Cover" aspect="3/4" class="transition-transform duration-300 ease-[cubic-bezier(0,0,0.2,1)] group-hover:scale-105" />
 		{/if}
 	</div>
 	<h4 class="mt-4 font-headline text-base font-medium">{title}</h4>

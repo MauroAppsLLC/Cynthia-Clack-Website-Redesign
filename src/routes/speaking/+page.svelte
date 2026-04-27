@@ -73,7 +73,7 @@
 <!-- Hero -->
 <section class="pt-6 pb-4 md:py-section">
 	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-10 px-6 md:grid-cols-2 md:gap-12">
-		<div class="text-center md:text-left" use:reveal>
+		<div class="text-center md:text-left" use:reveal={{ distance: 10, duration: 600 }}>
 			<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">Speaking</h1>
 			<p class="mt-4 text-lg text-text/60">
 				Insights drawn from four decades inside the legal system.
@@ -87,7 +87,7 @@
 				<Button href="/contact">Book Cynthia</Button>
 			</div>
 		</div>
-		<div class="flex justify-center md:justify-end" use:reveal={{ delay: 100 }}>
+		<div class="flex justify-center md:justify-end" use:reveal={{ distance: 14, delay: 120 }}>
 			<img
 				src={speakerPhotoSrc}
 				alt="Cynthia L. Clack - Speaker"

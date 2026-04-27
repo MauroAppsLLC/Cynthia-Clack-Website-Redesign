@@ -173,7 +173,7 @@
 
 
 <!-- Hero -->
-<section class="pt-6 pb-4 md:py-section text-center" use:reveal>
+<section class="pt-6 pb-4 md:py-section text-center" use:reveal={{ distance: 10, duration: 600 }}>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<h1 class="font-headline text-4xl md:text-h1 leading-[var(--text-h1--line-height)]">My Work</h1>
 		<p class="mt-2 font-headline text-xl text-text/60">Books, Projects &amp; Cases</p>

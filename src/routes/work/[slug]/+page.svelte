@@ -125,7 +125,7 @@
 
 		<!-- Quote pull-out -->
 		{#if item.quote}
-			<blockquote class="detail-quote" use:reveal>
+			<blockquote class="detail-quote" use:reveal={{ delay: 60 }}>
 				<div class="detail-quote__mark" aria-hidden="true">"</div>
 				<p class="detail-quote__text">{item.quote.text}</p>
 				{#if item.quote.attribution}
@@ -136,7 +136,7 @@
 
 		<!-- Accolades -->
 		{#if item.accolades && item.accolades.length > 0}
-			<aside class="detail-accolades" use:reveal>
+			<aside class="detail-accolades" use:reveal={{ delay: 90 }}>
 				<h2 class="detail-accolades__heading">Key Highlights</h2>
 				<ul class="detail-accolades__list">
 					{#each item.accolades as accolade}
@@ -151,7 +151,7 @@
 
 		<!-- Timeline -->
 		{#if item.timeline && item.timeline.length > 0}
-			<section class="detail-timeline" use:reveal>
+			<section class="detail-timeline" use:reveal={{ delay: 120 }}>
 				<h2 class="detail-timeline__heading">Timeline</h2>
 				<ol class="detail-timeline__list">
 					{#each item.timeline as event, i}
@@ -177,7 +177,7 @@
 
 <!-- ─── Related items ─────────────────────────────────────────────────────────── -->
 {#if related.length > 0}
-	<section class="related" use:reveal>
+	<section class="related" use:reveal={{ distance: 12 }}>
 		<div class="related__inner">
 			<h2 class="related__heading">You May Also Like</h2>
 			<div class="related__grid">
@@ -206,7 +206,7 @@
 {/if}
 
 <!-- ─── CTA ─────────────────────────────────────────────────────────────────────── -->
-<section class="detail-cta" use:reveal>
+<section class="detail-cta" use:reveal={{ distance: 10 }}>
 	<div class="detail-cta__inner">
 		<p class="detail-cta__line">Interested in working with Cynthia?</p>
 		<Button href="/contact">Get in Touch</Button>
@@ -367,7 +367,7 @@
 		display: block;
 		object-fit: cover;
 		aspect-ratio: 3/4;
-		transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+		transition: transform 0.6s var(--ease-decel);
 	}
 	.detail-hero__cover-wrap:hover .detail-hero__cover {
 		transform: scale(1.03);
@@ -604,7 +604,7 @@
 		overflow: hidden;
 		text-decoration: none;
 		color: inherit;
-		transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s;
+		transition: transform 0.35s var(--ease-decel), box-shadow 0.35s var(--ease-decel);
 		box-shadow: 0 1px 3px rgb(26 26 26 / 0.05);
 	}
 	.related-card:hover {
@@ -621,7 +621,7 @@
 		height: 100%;
 		object-fit: cover;
 		display: block;
-		transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+		transition: transform 0.5s var(--ease-decel);
 	}
 	.related-card:hover .related-card__img { transform: scale(1.06); }
 
