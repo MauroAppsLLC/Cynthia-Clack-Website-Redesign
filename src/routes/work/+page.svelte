@@ -49,7 +49,7 @@
 			// Subtract 165px to clear sticky nav+tabs and leave comfortable breathing room above the heading
 			const y = target.getBoundingClientRect().top + window.scrollY - 165;
 			window.scrollTo({ top: y, behavior: 'smooth' });
-			history.replaceState(null, '', `#${id}`);
+			history.replaceState(history.state, '', `#${id}`);
 			
 			clearTimeout(scrollTimeout);
 			scrollTimeout = setTimeout(() => {
@@ -78,7 +78,7 @@
 
 		if (activeSection !== currentSection) {
 			activeSection = currentSection;
-			history.replaceState(null, '', `#${currentSection}`);
+			history.replaceState(history.state, '', `#${currentSection}`);
 		}
 	}
 
