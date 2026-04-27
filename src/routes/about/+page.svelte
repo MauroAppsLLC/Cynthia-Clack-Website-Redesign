@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import PlaceholderBadge from '$lib/components/PlaceholderBadge.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	const brickLeftSrc = '/images/brick-left.png';
@@ -125,9 +126,10 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 					questions, and bring difficult realities into the light with clarity and conviction.
 				</p>
 				<blockquote class="mt-8 border-l-4 border-accent/30 pl-6 italic text-text/60">
-					"There are things I have seen — in families, in courtrooms, and behind closed doors
-					— that are difficult to explain and even harder to ignore. Writing became a way to
-					name what experience had already taught me."
+					<div class="mb-3">
+						<PlaceholderBadge />
+					</div>
+					"[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]"
 				</blockquote>
 			</div>
 			<div class="flex flex-col items-center gap-6">

@@ -213,6 +213,7 @@
 					dates={c.dates ?? ''}
 					description={c.summary}
 					href="/work/{c.slug}"
+					isPlaceholder={c.isPlaceholder}
 				/>
 			{/each}
 		</div>
@@ -257,6 +258,7 @@
 					dates={proj.dates ?? ''}
 					description={proj.summary}
 					href="/work/{proj.slug}"
+					isPlaceholder={proj.isPlaceholder}
 				/>
 			{/each}
 		</div>
@@ -275,6 +277,7 @@
 					href="/work/{book.slug}"
 					coverSrc={book.coverSrc}
 					coverAlt={book.coverAlt}
+					isPlaceholder={book.isPlaceholder}
 				/>
 			{/each}
 		</div>

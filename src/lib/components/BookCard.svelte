@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ImagePlaceholder from './ImagePlaceholder.svelte';
+	import PlaceholderBadge from './PlaceholderBadge.svelte';
 
 	interface Props {
 		title: string;
@@ -7,9 +8,10 @@
 		href?: string;
 		coverSrc?: string;
 		coverAlt?: string;
+		isPlaceholder?: boolean;
 	}
 
-	let { title, year, href, coverSrc, coverAlt }: Props = $props();
+	let { title, year, href, coverSrc, coverAlt, isPlaceholder }: Props = $props();
 </script>
 
 <div class="group mx-auto w-full max-w-[240px] text-center">
@@ -25,7 +27,12 @@
 			<ImagePlaceholder label="Book Cover" aspect="3/4" class="transition-transform duration-300 ease-[cubic-bezier(0,0,0.2,1)] group-hover:scale-105" />
 		{/if}
 	</div>
-	<h4 class="mt-4 font-headline text-base font-medium">{title}</h4>
+	<div class="mt-4 flex flex-col items-center gap-1">
+		{#if isPlaceholder}
+			<PlaceholderBadge />
+		{/if}
+		<h4 class="font-headline text-base font-medium">{title}</h4>
+	</div>
 	{#if year}
 		<p class="mt-1 text-sm text-text/50">{year}</p>
 	{/if}

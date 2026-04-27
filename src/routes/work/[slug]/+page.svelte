@@ -2,6 +2,7 @@
 	import { getRelated } from '$lib/data/work';
 	import Button from '$lib/components/Button.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+	import PlaceholderBadge from '$lib/components/PlaceholderBadge.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	let { data } = $props();
@@ -117,6 +118,9 @@
 				<span class="tag {accentClass[item.category]}">
 					{categoryIcon[item.category]} {item.tag ?? categoryLabel[item.category]}
 				</span>
+				{#if item.isPlaceholder}
+					<PlaceholderBadge />
+				{/if}
 				{#if item.dates ?? item.year}
 					<span class="detail-hero__date">{item.dates ?? item.year}</span>
 				{/if}
@@ -181,6 +185,11 @@
 		{#if item.quote}
 			<blockquote class="detail-quote" use:reveal={{ delay: 60 }}>
 				<div class="detail-quote__mark" aria-hidden="true">"</div>
+				{#if item.quote.isPlaceholder}
+					<div class="mb-4">
+						<PlaceholderBadge />
+					</div>
+				{/if}
 				<p class="detail-quote__text">{item.quote.text}</p>
 				{#if item.quote.attribution}
 					<footer class="detail-quote__attr">— {item.quote.attribution}</footer>
