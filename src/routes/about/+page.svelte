@@ -5,7 +5,7 @@
 	import { reveal } from '$lib/actions/reveal';
 
 	const brickLeftSrc = '/images/brick-left.png';
-const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
 

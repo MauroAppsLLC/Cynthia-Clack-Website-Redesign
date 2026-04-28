@@ -13,7 +13,7 @@
 	const projects = getByCategory('projects');
 	const books    = getByCategory('books');
 
-	const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+	const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg';
   const EyeOfTheTigerSrc = '/images/EyeoftheTiger.png';
 

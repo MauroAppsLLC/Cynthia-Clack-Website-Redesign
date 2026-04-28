@@ -170,8 +170,8 @@ export const workItems: WorkItem[] = [
 		subtitle: 'Piecing Together the Publishing Network',
 		year: '2026',
 		tag: 'Book',
-		isPlaceholder: true,
-		coverSrc: '/images/wk2_Monday_Insta_v3.png',
+		isPlaceholder: false,
+		coverSrc: '/images/discovering_the_club_final.jpeg',
 		coverAlt: 'Discovering the Club book cover by Cynthia L. Clack',
 		summary:
 			'An insightful guide to the complexities of the publishing industry — navigating the networks, precedents, and patterns that shape the path for authors.',

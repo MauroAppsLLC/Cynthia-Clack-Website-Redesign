@@ -9,7 +9,7 @@
 
 	const headshotSrc = '/images/Cynthia-Headshot.png';
 	const brickRightSrc = '/images/brick-right.png';
-const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const stats = [
