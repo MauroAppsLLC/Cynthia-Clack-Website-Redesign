@@ -165,7 +165,7 @@
 </section>
 
 <!-- Sticky Tabs -->
-<div class="sticky top-[65px] z-40 border-b border-secondary/30 bg-bg/95 backdrop-blur-md">
+<div class="sticky top-[65px] md:top-[95px] z-40 border-b border-secondary/30 bg-bg/95 backdrop-blur-md">
 	<div class="overflow-x-auto scrollbar-none">
 		<nav
 			class="mx-auto flex w-max min-w-full max-w-[var(--width-content)] items-center justify-center gap-2 px-4 py-3 md:px-6 md:py-4"
