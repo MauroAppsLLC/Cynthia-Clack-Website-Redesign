@@ -9,7 +9,7 @@
 
 	const headshotSrc = '/images/Cynthia-Headshot.png';
 	const brickRightSrc = '/images/brick-right.png';
-const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	const stats = [
@@ -118,7 +118,7 @@ const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
 				Written from decades of firsthand experience.
 			</p>
 			<div class="mt-8">
-				<Button href="/work#books">Explore the Book</Button>
+				<Button href="/work/discovering-the-club">Explore the Book</Button>
 			</div>
 		</div>
 	</div>

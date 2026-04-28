@@ -93,7 +93,7 @@
 </svelte:head>
 
 <Nav />
-<main class="pt-[72px]">
+<main class="pt-[72px] md:pt-[102px]">
 	{#key transitionKey}
 		<div class={transitionKey > 0 ? 'page-transition' : ''}>
 			{@render children()}

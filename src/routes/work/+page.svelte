@@ -13,7 +13,7 @@
 	const projects = getByCategory('projects');
 	const books    = getByCategory('books');
 
-	const discoveringClubCoverSrc = '/images/wk2_Monday_Insta_v3.png';
+	const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg';
   const EyeOfTheTigerSrc = '/images/EyeoftheTiger.png';
 
@@ -129,27 +129,14 @@
 				"@type": "ListItem",
 				"position": 3,
 				"item": {
-					"@type": "Book",
-					"name": "Doodles the American Poodle",
+					"@type": "BookSeries",
+					"name": "The Doodles Series",
 					"author": {
 						"@type": "Person",
 						"name": "Cynthia L. Clack"
 					},
-					"url": `${SITE_URL}/work#books`,
-					"inLanguage": "en"
-				}
-			},
-			{
-				"@type": "ListItem",
-				"position": 4,
-				"item": {
-					"@type": "Book",
-					"name": "Doodles the American Hero",
-					"author": {
-						"@type": "Person",
-						"name": "Cynthia L. Clack"
-					},
-					"url": `${SITE_URL}/work#books`,
+					"url": `${SITE_URL}/work/doodles-the-series`,
+					"description": "A children's book series following the adventures of Doodles, a loveable teacup poodle.",
 					"inLanguage": "en"
 				}
 			}
@@ -203,7 +190,7 @@
 
 
 <!-- Landmark Cases -->
-<section id="cases" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
+<section id="cases" class="scroll-mt-32 md:scroll-mt-48 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Landmark Cases" subtitle="Four decades of fighting for justice — case by case." />
 		<div class="grid gap-8 md:grid-cols-2">
@@ -221,7 +208,7 @@
 </section>
 
 <!-- Projects & Creative Works -->
-<section id="projects" class="scroll-mt-32 md:scroll-mt-40 py-section" use:reveal>
+<section id="projects" class="scroll-mt-32 md:scroll-mt-48 py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Projects &amp; Creative Works" subtitle="Beyond the courtroom — storytelling as advocacy." />
 		<div class="grid gap-8 md:grid-cols-2">
@@ -266,7 +253,7 @@
 </section>
 
 <!-- Books -->
-<section id="books" class="scroll-mt-32 md:scroll-mt-40 bg-white py-section" use:reveal>
+<section id="books" class="scroll-mt-32 md:scroll-mt-48 bg-white py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Books" subtitle="From the courtroom to the page — stories that change lives." />
 		<div class="flex flex-wrap justify-center gap-8">
