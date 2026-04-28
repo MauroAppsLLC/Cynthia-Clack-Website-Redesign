@@ -5,7 +5,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
-	const speakerPhotoSrc = '/images/speaking.png';
+	const speakerPhotoSrc = '/images/cynthia-office-final.jpeg';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
@@ -82,11 +82,11 @@
 				<Button href="/contact">Book Cynthia</Button>
 			</div>
 		</div>
-		<div class="flex justify-center md:justify-end" use:reveal={{ distance: 14, delay: 120 }}>
+		<div class="overflow-hidden rounded-[var(--radius-card)] shadow-card" use:reveal={{ distance: 14, delay: 120 }}>
 			<img
 				src={speakerPhotoSrc}
 				alt="Cynthia L. Clack - Speaker"
-				class="h-auto w-full max-w-[240px] rounded-[var(--radius-card)] object-cover shadow-sm"
+				class="aspect-[4/3] w-full object-cover"
 				loading="lazy"
 			/>
 		</div>
