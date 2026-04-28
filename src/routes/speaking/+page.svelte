@@ -4,6 +4,7 @@
 	import ImagePlaceholder from '$lib/components/ImagePlaceholder.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { optimizeImage } from '$lib/utils/image';
 
 	const speakerPhotoSrc = '/images/cynthia-office-final.jpeg';
 
@@ -84,7 +85,7 @@
 		</div>
 		<div class="overflow-hidden rounded-[var(--radius-card)] shadow-card" use:reveal={{ distance: 14, delay: 120 }}>
 			<img
-				src={speakerPhotoSrc}
+				src={optimizeImage(speakerPhotoSrc)}
 				alt="Cynthia L. Clack - Speaker"
 				class="aspect-[4/3] w-full object-cover"
 				loading="lazy"

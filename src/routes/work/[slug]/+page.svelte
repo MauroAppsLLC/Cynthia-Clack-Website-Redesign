@@ -4,6 +4,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import PlaceholderBadge from '$lib/components/PlaceholderBadge.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { optimizeImage } from '$lib/utils/image';
 
 	let { data } = $props();
 	const item = $derived(data.item);
@@ -156,7 +157,7 @@
 			{#if item.coverSrc}
 				<div class="detail-hero__cover-wrap">
 					<img
-						src={item.coverSrc}
+						src={optimizeImage(item.coverSrc, 800)}
 						alt={item.coverAlt ?? item.title}
 						class="detail-hero__cover"
 						loading="eager"
@@ -190,7 +191,7 @@
 		{#if item.heroSrc}
 			<figure class="detail-body__figure" use:reveal={{ delay: 40 }}>
 				<img
-					src={item.heroSrc}
+					src={optimizeImage(item.heroSrc, 1200)}
 					alt={item.title}
 					class="detail-body__figure-img"
 					loading="lazy"
@@ -311,7 +312,7 @@
 					<a href="/work/{rel.slug}" class="related-card">
 						{#if rel.coverSrc}
 							<div class="related-card__img-wrap">
-								<img src={rel.coverSrc} alt={rel.coverAlt ?? rel.title} class="related-card__img" loading="lazy" />
+								<img src={optimizeImage(rel.coverSrc, 600)} alt={rel.coverAlt ?? rel.title} class="related-card__img" loading="lazy" />
 							</div>
 						{:else}
 							<div class="related-card__emblem" aria-hidden="true">

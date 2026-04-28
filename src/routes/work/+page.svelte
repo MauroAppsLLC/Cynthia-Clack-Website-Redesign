@@ -8,6 +8,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { getByCategory } from '$lib/data/work';
+	import { optimizeImage } from '$lib/utils/image';
 
 	const cases    = getByCategory('cases');
 	const projects = getByCategory('projects');
@@ -215,7 +216,7 @@
 			<!-- Eye of the Tiger — featured with image -->
 			<div class="grid items-center gap-8 rounded-[var(--radius-card)] border border-secondary bg-white p-8 shadow-card md:grid-cols-[200px_1fr] md:col-span-2">
 				<img
-					src={EyeOfTheTigerSrc}
+					src={optimizeImage(EyeOfTheTigerSrc)}
 					alt="Eye of the Tiger - A Rock Opera by Cynthia L. Clack"
 					class="aspect-[3/4] w-full object-cover rounded-[var(--radius-card)] shadow-sm"
 					loading="lazy"

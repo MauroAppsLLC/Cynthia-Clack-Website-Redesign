@@ -6,6 +6,7 @@
 	import BookCard from '$lib/components/BookCard.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { optimizeImage } from '$lib/utils/image';
 
 	const headshotSrc = '/images/Cynthia-Headshot.png';
 	const brickRightSrc = '/images/brick-right.png';
@@ -84,7 +85,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
 		<!-- Full hero image — Cynthia on brick wall, subject to the right -->
 		<img
-			src={brickRightSrc}
+			src={optimizeImage(brickRightSrc)}
 			alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
 			class="absolute inset-0 h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
 		/>
@@ -103,7 +104,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<div class="mx-auto grid max-w-[var(--width-content)] items-center gap-12 px-6 md:grid-cols-2">
 		<div class="flex justify-center">
 			<img
-				src={discoveringClubCoverSrc}
+				src={optimizeImage(discoveringClubCoverSrc)}
 				alt="Discovering the Club book cover by Cynthia L. Clack"
 				class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-card"
 				loading="lazy"

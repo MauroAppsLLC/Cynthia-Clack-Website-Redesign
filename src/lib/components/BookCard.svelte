@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ImagePlaceholder from './ImagePlaceholder.svelte';
 	import PlaceholderBadge from './PlaceholderBadge.svelte';
+	import { optimizeImage } from '$lib/utils/image';
 
 	interface Props {
 		title: string;
@@ -18,7 +19,7 @@
 	<div class="overflow-hidden rounded-[var(--radius-card)]">
 		{#if coverSrc}
 			<img
-				src={coverSrc}
+				src={optimizeImage(coverSrc, 600)}
 				alt={coverAlt ?? `${title} book cover`}
 				class="aspect-[3/4] w-full object-cover transition-transform duration-300 ease-[cubic-bezier(0,0,0.2,1)] group-hover:scale-105"
 				loading="lazy"

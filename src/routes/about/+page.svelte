@@ -3,6 +3,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import PlaceholderBadge from '$lib/components/PlaceholderBadge.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { optimizeImage } from '$lib/utils/image';
 
 	const brickLeftSrc = '/images/brick-left.png';
 const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
@@ -37,7 +38,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute full-bleed on desktop) -->
 	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
 		<img
-			src={brickLeftSrc}
+			src={optimizeImage(brickLeftSrc)}
 			alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
 			class="absolute inset-0 h-full w-full object-cover object-[25%_10%] md:object-[left_20%]"
 		/>
@@ -134,7 +135,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 			</div>
 			<div class="flex flex-col items-center gap-6">
 				<img
-					src={discoveringClubCoverSrc}
+					src={optimizeImage(discoveringClubCoverSrc)}
 					alt="Discovering the Club book cover by Cynthia L. Clack"
 					class="aspect-[3/4] w-full max-w-xs rounded-[var(--radius-card)] object-cover shadow-card"
 					loading="lazy"
