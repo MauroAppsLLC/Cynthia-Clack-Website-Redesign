@@ -1,4 +1,4 @@
-import { dev } from '$app/environment';
+import { dev, building } from '$app/environment';
 
 /**
  * Optimizes an image URL using Netlify Image CDN when in production.
@@ -9,10 +9,9 @@ import { dev } from '$app/environment';
 export function optimizeImage(src: string | undefined | null, width?: number): string | undefined {
 	if (!src) return undefined;
 	
-	// Skip optimization during local development (unless using netlify CLI, but standard vite dev doesn't support the endpoint)
-	if (dev) return src;
+	// Skip during dev and during SSR prerendering (/.netlify/images only exists at runtime)
+	if (dev || building) return src;
 
-	// We only want to optimize local images that start with '/'
 	if (!src.startsWith('/')) return src;
 
 	let url = `/.netlify/images?url=${encodeURIComponent(src)}&fm=webp`;
