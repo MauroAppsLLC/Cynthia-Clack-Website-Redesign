@@ -38,11 +38,11 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute full-bleed on desktop) -->
 	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
 		<picture class="absolute inset-0 h-full w-full">
-			<source media="(max-width: 768px)" srcset={optimizeImage('/images/hero-center.png')} />
+			<source media="(max-width: 768px)" srcset={optimizeImage('/images/hero-center.png') || '/images/hero-center.png'} />
 			<img
-				src={optimizeImage(brickLeftSrc)}
+				src={optimizeImage(brickLeftSrc) || brickLeftSrc}
 				alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
-				class="h-full w-full object-cover object-[25%_10%] md:object-[left_20%]"
+				class="h-full w-full object-cover object-center md:object-[left_20%]"
 			/>
 		</picture>
 		<!-- Desktop Gradient (Fade right so text is readable) -->

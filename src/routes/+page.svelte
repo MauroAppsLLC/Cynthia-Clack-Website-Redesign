@@ -85,11 +85,11 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
 		<!-- Full hero image — Cynthia on brick wall, subject to the right -->
 		<picture class="absolute inset-0 h-full w-full">
-			<source media="(max-width: 768px)" srcset={optimizeImage('/images/hero-center.png')} />
+			<source media="(max-width: 768px)" srcset={optimizeImage('/images/hero-center.png') || '/images/hero-center.png'} />
 			<img
-				src={optimizeImage(brickRightSrc)}
+				src={optimizeImage(brickRightSrc) || brickRightSrc}
 				alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
-				class="h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
+				class="h-full w-full object-cover object-center md:object-[right_20%]"
 			/>
 		</picture>
 		<!-- Desktop Gradient (Fade left so text is readable) -->
