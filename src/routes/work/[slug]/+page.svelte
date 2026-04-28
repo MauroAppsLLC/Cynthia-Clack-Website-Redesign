@@ -9,6 +9,11 @@
 	const item = $derived(data.item);
 	const related = $derived(getRelated(item));
 
+	let expandedVolumes: Record<number, boolean> = $state({});
+	function toggleVolume(i: number) {
+		expandedVolumes[i] = !expandedVolumes[i];
+	}
+
 	const SITE_URL = 'https://cynthiaclack.com';
 
 	/** Category → display label */
@@ -181,6 +186,18 @@
 			{/each}
 		</div>
 
+		<!-- Secondary image -->
+		{#if item.heroSrc}
+			<figure class="detail-body__figure" use:reveal={{ delay: 40 }}>
+				<img
+					src={item.heroSrc}
+					alt={item.title}
+					class="detail-body__figure-img"
+					loading="lazy"
+				/>
+			</figure>
+		{/if}
+
 		<!-- Quote pull-out -->
 		{#if item.quote}
 			<blockquote class="detail-quote" use:reveal={{ delay: 60 }}>
@@ -232,6 +249,52 @@
 						</li>
 					{/each}
 				</ol>
+			</section>
+		{/if}
+
+		<!-- Volumes (series books) -->
+		{#if item.volumes && item.volumes.length > 0}
+			<section class="detail-volumes" use:reveal={{ delay: 150 }}>
+				<h2 class="detail-volumes__heading">Books in the Series</h2>
+				<div class="detail-volumes__list">
+					{#each item.volumes as vol, i}
+						<div class="volume-card" class:volume-card--open={expandedVolumes[i]}>
+							<button
+								class="volume-card__header"
+								onclick={() => toggleVolume(i)}
+								aria-expanded={expandedVolumes[i] ?? false}
+							>
+								<div class="volume-card__info">
+									<span class="volume-card__subtitle">{vol.subtitle ?? ''}</span>
+									<h3 class="volume-card__title">{vol.title}</h3>
+									{#if vol.year}
+										<span class="volume-card__year">{vol.year}</span>
+									{/if}
+								</div>
+								<span class="volume-card__chevron" aria-hidden="true">
+									{expandedVolumes[i] ? '−' : '+'}
+								</span>
+							</button>
+
+							<p class="volume-card__summary">{vol.summary}</p>
+
+							{#if expandedVolumes[i]}
+								<div class="volume-card__body">
+									{#each vol.body as paragraph}
+										<p>{paragraph}</p>
+									{/each}
+									{#if vol.accolades && vol.accolades.length > 0}
+										<ul class="volume-card__accolades">
+											{#each vol.accolades as accolade}
+												<li>{accolade}</li>
+											{/each}
+										</ul>
+									{/if}
+								</div>
+							{/if}
+						</div>
+					{/each}
+				</div>
 			</section>
 		{/if}
 
@@ -486,6 +549,21 @@
 		margin-bottom: 1.5rem;
 	}
 	.detail-body__prose p:last-child { margin-bottom: 0; }
+
+	/* ── Secondary figure ────────────────────────────────────────────────────── */
+	.detail-body__figure {
+		max-width: var(--detail-prose-max);
+		border-radius: 1.25rem;
+		overflow: hidden;
+		box-shadow:
+			0 4px 20px rgb(26 26 26 / 0.1),
+			0 1px 4px rgb(26 26 26 / 0.06);
+	}
+	.detail-body__figure-img {
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
 
 	/* ── Quote ───────────────────────────────────────────────────────────────── */
 	.detail-quote {
@@ -759,5 +837,144 @@
 	.detail-cta :global(a:hover),
 	.detail-cta :global(button:hover) {
 		background: #e8f0f8 !important;
+	}
+
+	/* ── Volumes (accordion cards) ──────────────────────────────────────────── */
+	.detail-volumes {
+		max-width: var(--detail-prose-max);
+	}
+	.detail-volumes__heading {
+		font-family: var(--font-headline);
+		font-size: 1.3rem;
+		color: var(--color-accent);
+		margin-bottom: 1.5rem;
+	}
+	.detail-volumes__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.volume-card {
+		border: 1.5px solid var(--color-secondary);
+		border-radius: 1rem;
+		overflow: hidden;
+		background: var(--color-bg);
+		transition: box-shadow 0.25s ease;
+	}
+	.volume-card--open {
+		box-shadow: 0 4px 16px rgb(26 26 26 / 0.08);
+	}
+
+	.volume-card__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 1.25rem 1.5rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		text-align: left;
+		gap: 1rem;
+	}
+	.volume-card__header:hover {
+		background: var(--color-secondary);
+	}
+
+	.volume-card__info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+	.volume-card__subtitle {
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-accent);
+		opacity: 0.6;
+	}
+	.volume-card__title {
+		font-family: var(--font-headline);
+		font-size: 1.05rem;
+		color: var(--color-text);
+		line-height: 1.3;
+	}
+	.volume-card__year {
+		font-size: 0.8rem;
+		color: var(--color-text);
+		opacity: 0.45;
+		font-weight: 500;
+	}
+
+	.volume-card__chevron {
+		flex-shrink: 0;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 9999px;
+		background: var(--color-secondary);
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--color-accent);
+		transition: background 0.15s;
+	}
+	.volume-card__header:hover .volume-card__chevron {
+		background: var(--color-accent);
+		color: #fff;
+	}
+
+	.volume-card__summary {
+		padding: 0 1.5rem 1.25rem;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--color-text);
+		opacity: 0.65;
+	}
+
+	.volume-card__body {
+		padding: 0 1.5rem 1.5rem;
+		border-top: 1px solid var(--color-secondary);
+		padding-top: 1.25rem;
+	}
+	.volume-card__body p {
+		font-size: 0.9375rem;
+		line-height: 1.75;
+		color: var(--color-text);
+		opacity: 0.8;
+		margin-bottom: 1rem;
+	}
+	.volume-card__body p:last-child {
+		margin-bottom: 0;
+	}
+
+	.volume-card__accolades {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.volume-card__accolades li {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		background: var(--color-secondary);
+		border-radius: 9999px;
+		padding: 0.3em 0.85em;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: var(--color-text);
+		opacity: 0.7;
+	}
+	.volume-card__accolades li::before {
+		content: '✓';
+		font-size: 0.65rem;
+		font-weight: 700;
+		color: var(--color-accent);
 	}
 </style>

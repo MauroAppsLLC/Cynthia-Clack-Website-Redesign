@@ -118,7 +118,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 				Written from decades of firsthand experience.
 			</p>
 			<div class="mt-8">
-				<Button href="/work#books">Explore the Book</Button>
+				<Button href="/work/discovering-the-club">Explore the Book</Button>
 			</div>
 		</div>
 	</div>
