@@ -126,12 +126,12 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 					became another form of witness. It created space to examine patterns, ask harder
 					questions, and bring difficult realities into the light with clarity and conviction.
 				</p>
-				<blockquote class="mt-8 border-l-4 border-accent/30 pl-6 italic text-text/60">
+				<!-- <blockquote class="mt-8 border-l-4 border-accent/30 pl-6 italic text-text/60">
 					<div class="mb-3">
 						<PlaceholderBadge />
 					</div>
 					"[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]"
-				</blockquote>
+				</blockquote> -->
 			</div>
 			<div class="flex flex-col items-center gap-6">
 				<img

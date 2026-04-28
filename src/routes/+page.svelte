@@ -19,7 +19,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 		{ value: 'Advocate', label: 'A voice for complex issues' }
 	];
 
-	const focusAreas = [
+	const focusAreas: { title: string; description: string; }[] = [
 		{
 			title: 'Family Law',
 			description:
@@ -84,11 +84,14 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute full-bleed on desktop) -->
 	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
 		<!-- Full hero image — Cynthia on brick wall, subject to the right -->
-		<img
-			src={optimizeImage(brickRightSrc)}
-			alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
-			class="absolute inset-0 h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
-		/>
+		<picture class="absolute inset-0 h-full w-full">
+			<source media="(max-width: 768px)" srcset={optimizeImage('/images/brick-hero.png')} />
+			<img
+				src={optimizeImage(brickRightSrc)}
+				alt="Cynthia L. Clack, Texas family law attorney and author, photographed against a brick wall in Odessa, TX"
+				class="h-full w-full object-cover object-[75%_10%] md:object-[right_20%]"
+			/>
+		</picture>
 		<!-- Desktop Gradient (Fade left so text is readable) -->
 		<div class="hidden md:block pointer-events-none absolute inset-0 bg-gradient-to-r md:from-bg md:from-15% md:via-bg/70 md:via-40% md:to-transparent md:to-65%"></div>
 		<!-- Fade bottom into next section -->
@@ -151,7 +154,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 					<h3 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">{area.title}</h3>
 					<p class="mt-3 text-text/70">{area.description}</p>
 				</div>
-			{/each}
+				{/each}
 		</div>
 	</div>
 </section>

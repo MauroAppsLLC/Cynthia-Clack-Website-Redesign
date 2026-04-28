@@ -113,10 +113,10 @@ export const workItems: WorkItem[] = [
 			{ year: '2005-2006', label: 'Case attracts significant media attention in China' },
 			{ year: 'January 2006', label: 'Ector County judge grants Wu temporary custody; case resolved in Texas' },
 		],
-		quote: {
-			text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
-			isPlaceholder: true,
-		},
+		// quote: {
+		// 	text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
+		// 	isPlaceholder: true,
+		// },
 		accolades: [
 			'Nationally reported in Chinese press',
 			'Highlighted gaps in international custody law',
@@ -149,10 +149,10 @@ export const workItems: WorkItem[] = [
 			{ year: '2005', label: 'Eye of the Tiger premieres at the Globe of the Great Southwest, Odessa, TX' },
 			{ year: '2007', label: 'Invited by the Chinese government for an international tour' },
 		],
-		quote: {
-			text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
-			isPlaceholder: true,
-		},
+		// quote: {
+		// 	text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
+		// 	isPlaceholder: true,
+		// },
 		accolades: [
 			'Performed at the Globe of the Great Southwest, Odessa, TX',
 			'Invited by the Chinese Government for an international tour',
@@ -204,10 +204,10 @@ export const workItems: WorkItem[] = [
 			{ year: '1984-2000s', label: 'Decades of landmark cases and creative works that inform the book\'s findings' },
 			{ year: '2026', label: 'Discovering the Club published' },
 		],
-		quote: {
-			text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
-			isPlaceholder: true,
-		},
+		// quote: {
+		// 	text: '[Quote to be provided. This is a temporary placeholder to demonstrate the quote layout.]',
+		// 	isPlaceholder: true,
+		// },
 		accolades: [
 			'Published 2026',
 			'[PLACEHOLDER] Additional accolades to be confirmed',

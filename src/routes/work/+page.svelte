@@ -8,11 +8,12 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { getByCategory } from '$lib/data/work';
+	import type { WorkItem } from '$lib/data/work';
 	import { optimizeImage } from '$lib/utils/image';
 
-	const cases    = getByCategory('cases');
-	const projects = getByCategory('projects');
-	const books    = getByCategory('books');
+	const cases: WorkItem[]    = getByCategory('cases');
+	const projects: WorkItem[] = getByCategory('projects');
+	const books: WorkItem[]    = getByCategory('books');
 
 	const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const doodlesSrc = '/images/SKMBT_C35313012115410.jpg';
@@ -20,13 +21,13 @@
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
-	const workTabs = [
-		{ id: 'cases' as const, label: 'Landmark Cases' },
-		{ id: 'projects' as const, label: 'Projects' },
-		{ id: 'books' as const, label: 'Books' }
-	];
+	type WorkSection = 'cases' | 'projects' | 'books';
 
-	type WorkSection = (typeof workTabs)[number]['id'];
+	const workTabs: { id: WorkSection; label: string; }[] = [
+		{ id: 'cases', label: 'Landmark Cases' },
+		{ id: 'projects', label: 'Projects' },
+		{ id: 'books', label: 'Books' }
+	];
 
 	let activeSection = $state<WorkSection>('cases');
 	let isScrolling = false;

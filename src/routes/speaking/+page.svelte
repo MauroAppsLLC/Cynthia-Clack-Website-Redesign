@@ -10,7 +10,7 @@
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
-	const topics = [
+	const topics: { title: string; description: string; }[] = [
 		{
 			title: 'Family Law & High-Conflict Custody',
 			description:
