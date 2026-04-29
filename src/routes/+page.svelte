@@ -167,31 +167,33 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 			<div class="md:col-span-2 rounded-[var(--radius-card)] border border-secondary bg-bg p-8 shadow-card">
 				<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">Featured</p>
 				<h3 class="mt-2 font-headline text-h3 leading-[var(--text-h3--line-height)]">Johnny Foote's Story</h3>
-				<p class="mt-1 text-sm text-text/50">1992–2000</p>
+				<p class="mt-1 text-sm text-text/50">1982–1984</p>
 				<p class="mt-4 text-text/70 leading-relaxed">
 					The case of a man who confessed to a horrific murder he did not commit. Cynthia's
 					advocacy led to his acquittal and exposed the failures of a system that nearly
 					destroyed an innocent life.
 				</p>
 				<div class="mt-6">
-					<Button href="/work" variant="outline">Read the Story &rsaquo;</Button>
+					<Button href="/work/johnny-foote" variant="outline">Read the Story &rsaquo;</Button>
 				</div>
 			</div>
 			<div class="flex flex-col gap-8">
-				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card">
+				<a href="/work/emily-wu" class="block rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card transition-shadow hover:shadow-lg">
 					<h4 class="font-headline text-lg">The Emily Wu Case</h4>
-					<p class="mt-1 text-sm text-text/50">2000–2005</p>
+					<p class="mt-1 text-sm text-text/50">2005–2006</p>
 					<p class="mt-2 text-sm text-text/70">
 						An international child kidnapping case that made headlines across continents.
 					</p>
-				</div>
-				<div class="rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card">
+					<p class="mt-3 text-sm font-medium text-accent">Read More &rsaquo;</p>
+				</a>
+				<a href="/work/eye-of-the-tiger" class="block rounded-[var(--radius-card)] border border-secondary bg-bg p-6 shadow-card transition-shadow hover:shadow-lg">
 					<h4 class="font-headline text-lg">Eye of the Tiger</h4>
 					<p class="mt-1 text-sm text-text/50">Rock Opera, 2005</p>
 					<p class="mt-2 text-sm text-text/70">
 						A rock opera performed at the Globe of the Great Southwest and internationally in China.
 					</p>
-				</div>
+					<p class="mt-3 text-sm font-medium text-accent">Read More &rsaquo;</p>
+				</a>
 			</div>
 		</div>
 	</div>
