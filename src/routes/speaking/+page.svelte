@@ -116,13 +116,14 @@
 	<div class="mx-auto max-w-[var(--width-content)] px-6">
 		<SectionHeading title="Upcoming Events" subtitle="Where you can see Cynthia speak next." />
 		<div class="mx-auto max-w-2xl">
-			<div class="rounded-[var(--radius-card)] border border-accent/20 bg-bg p-8 shadow-card">
+			<a href="https://www.tafda.net/cles" target="_blank" rel="noopener noreferrer" class="block rounded-[var(--radius-card)] border border-accent/20 bg-bg p-8 shadow-card transition-shadow hover:shadow-lg">
 				<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">June 25–26, 2026</p>
 				<h3 class="mt-2 font-headline text-h3 leading-[var(--text-h3--line-height)]">
 					Annual Conference by the Texas Association of Family Defense Attorneys (TAFDA)
 				</h3>
 				<p class="mt-2 text-text/60">Galveston, Texas</p>
-			</div>
+				<p class="mt-3 text-sm font-medium text-accent">View Event Details &rsaquo;</p>
+			</a>
 		</div>
 	</div>
 </section>

@@ -133,7 +133,7 @@ export const workItems: WorkItem[] = [
 		subtitle: 'Libretto & Lyrics by Cynthia L. Clack · Music by Randall Shafer',
 		dates: '2005-2007',
 		tag: 'Creative Project',
-		isPlaceholder: true,
+		isPlaceholder: false,
 		coverSrc: '/images/EyeoftheTiger.png',
 		coverAlt: 'Eye of the Tiger — A Rock Opera promotional image',
 		summary:
