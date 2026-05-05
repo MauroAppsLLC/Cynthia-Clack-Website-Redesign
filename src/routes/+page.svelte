@@ -221,34 +221,20 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	</div>
 </section>
 
-<!-- Email Signup -->
+<!-- CTA -->
 <section class="bg-accent py-section text-white" use:reveal={{ distance: 10 }}>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">
-		<h2 class="font-headline text-h2 leading-[var(--text-h2--line-height)]">Stay Connected</h2>
+		<h2 class="font-headline text-h2 leading-[var(--text-h2--line-height)]">Book a Consultation</h2>
 		<p class="mx-auto mt-3 max-w-[var(--width-text)] text-white/70">
-			Receive updates on new writing, speaking engagements, and insights from Cynthia's work.
+			For legal consultations, speaking inquiries, or general questions — reach out today.
 		</p>
-		<form class="mx-auto mt-8 flex max-w-lg flex-col gap-4 sm:flex-row" method="POST" action="/?success=true" data-netlify="true" name="newsletter">
-			<input type="hidden" name="form-name" value="newsletter" />
-			<input
-				type="text"
-				name="name"
-				placeholder="Your name"
-				class="flex-1 rounded-full bg-white/10 px-5 py-3 text-sm text-white placeholder-white/50 outline-none ring-1 ring-white/20 focus:ring-white/50"
-			/>
-			<input
-				type="email"
-				name="email"
-				placeholder="Your email"
-				required
-				class="flex-1 rounded-full bg-white/10 px-5 py-3 text-sm text-white placeholder-white/50 outline-none ring-1 ring-white/20 focus:ring-white/50"
-			/>
-			<button
-				type="submit"
-				class="rounded-full bg-white px-7 py-3 text-sm font-medium text-accent transition-colors hover:bg-white/90 cursor-pointer"
+		<div class="mt-8">
+			<a
+				href="mailto:cynthia.l.clack@gmail.com?subject=Consultation%20Request"
+				class="inline-flex items-center justify-center rounded-full border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-white hover:text-accent"
 			>
-				Subscribe
-			</button>
-		</form>
+				Get in Touch
+			</a>
+		</div>
 	</div>
 </section>

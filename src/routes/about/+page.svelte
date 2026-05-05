@@ -5,7 +5,7 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { optimizeImage } from '$lib/utils/image';
 
-	const brickLeftSrc = '/images/brick-left.png';
+	const brickLeftSrc = '/images/cynthia-speaking.jpeg';
 const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
@@ -35,18 +35,18 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 		</div>
 	</div>
 
-	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute full-bleed on desktop) -->
-	<div class="relative w-full h-[50vh] md:absolute md:inset-0 md:h-auto order-2 md:order-none">
+	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute left-aligned on desktop) -->
+	<div class="relative w-full h-[50vh] md:absolute md:top-0 md:bottom-0 md:left-0 md:w-[55%] md:h-auto order-2 md:order-none">
 		<picture class="absolute inset-0 h-full w-full">
-			<source media="(max-width: 768px)" srcset={optimizeImage('/images/hero-center.png') || '/images/hero-center.png'} />
+			<source media="(max-width: 768px)" srcset={optimizeImage('/images/cynthia-speaking.jpeg') || '/images/cynthia-speaking.jpeg'} />
 			<img
 				src={optimizeImage(brickLeftSrc) || brickLeftSrc}
-				alt="Cynthia L. Clack photographed in front of a historic brick wall in Odessa, Texas"
-				class="h-full w-full object-cover object-center md:object-[left_20%]"
+				alt="Cynthia L. Clack speaking at a podium"
+				class="h-full w-full object-cover object-top md:object-[center_15%]"
 			/>
 		</picture>
 		<!-- Desktop Gradient (Fade right so text is readable) -->
-		<div class="hidden md:block pointer-events-none absolute inset-0 bg-gradient-to-l md:from-bg md:from-15% md:via-bg/70 md:via-40% md:to-transparent md:to-65%"></div>
+		<div class="hidden md:block pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent from-40% via-bg/60 via-75% to-bg to-100%"></div>
 		<!-- Fade bottom into next section -->
 		<div class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-bg to-transparent"></div>
 	</div>

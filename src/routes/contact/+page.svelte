@@ -137,7 +137,25 @@
 			</div>
 		</div>
 
-		<!-- Form -->
+		<!-- Send Email CTA -->
+		<div class="flex flex-col items-center justify-center rounded-[var(--radius-card)] border border-secondary bg-bg p-10 text-center shadow-card">
+			<h2 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">Send a Message</h2>
+			<p class="mt-4 max-w-sm text-text/60 leading-relaxed">
+				Click below to open your email client and send a message directly to Cynthia.
+			</p>
+			<div class="mt-8">
+				<a
+					href="mailto:cynthia.l.clack@gmail.com?subject=Inquiry%20from%20CynthiaClack.com"
+					class="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent/90"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+					Send an Email
+				</a>
+			</div>
+		</div>
+
+		<!-- Netlify form preserved for future use -->
+		<!--
 		<div>
 			<h2 class="font-headline text-h3 leading-[var(--text-h3--line-height)]">Send a Message</h2>
 			<form
@@ -148,37 +166,19 @@
 				name="contact"
 			>
 				<input type="hidden" name="form-name" value="contact" />
-
 				<div class="grid gap-5 sm:grid-cols-2">
 					<div>
 						<label for="name" class="block text-sm font-medium text-text/70">Name</label>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							required
-							class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
-						/>
+						<input type="text" id="name" name="name" required class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20" />
 					</div>
 					<div>
 						<label for="email" class="block text-sm font-medium text-text/70">Email</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							required
-							class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
-						/>
+						<input type="email" id="email" name="email" required class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20" />
 					</div>
 				</div>
-
 				<div>
 					<label for="subject" class="block text-sm font-medium text-text/70">Subject</label>
-					<select
-						id="subject"
-						name="subject"
-						class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
-					>
+					<select id="subject" name="subject" class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20">
 						<option value="">Select a topic</option>
 						<option value="legal">Legal Consultation</option>
 						<option value="speaking">Speaking Inquiry</option>
@@ -186,22 +186,15 @@
 						<option value="general">General Question</option>
 					</select>
 				</div>
-
 				<div>
 					<label for="message" class="block text-sm font-medium text-text/70">Message</label>
-					<textarea
-						id="message"
-						name="message"
-						rows="6"
-						required
-						class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20 resize-none"
-					></textarea>
+					<textarea id="message" name="message" rows="6" required class="mt-1 w-full rounded-2xl border border-secondary bg-bg px-5 py-3 text-sm outline-none transition-colors focus:border-accent/40 focus:ring-1 focus:ring-accent/20 resize-none"></textarea>
 				</div>
-
 				<div>
 					<Button>Send Message</Button>
 				</div>
 			</form>
 		</div>
+		-->
 	</div>
 </section>

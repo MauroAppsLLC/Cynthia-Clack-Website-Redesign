@@ -111,6 +111,22 @@
 	</div>
 </section>
 
+<!-- Upcoming Events -->
+<section class="py-section" use:reveal>
+	<div class="mx-auto max-w-[var(--width-content)] px-6">
+		<SectionHeading title="Upcoming Events" subtitle="Where you can see Cynthia speak next." />
+		<div class="mx-auto max-w-2xl">
+			<div class="rounded-[var(--radius-card)] border border-accent/20 bg-bg p-8 shadow-card">
+				<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">June 25–26, 2026</p>
+				<h3 class="mt-2 font-headline text-h3 leading-[var(--text-h3--line-height)]">
+					Annual Conference by the Texas Association of Family Defense Attorneys (TAFDA)
+				</h3>
+				<p class="mt-2 text-text/60">Galveston, Texas</p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Testimonial -->
 <section class="py-section" use:reveal>
 	<div class="mx-auto max-w-[var(--width-content)] px-6 text-center">

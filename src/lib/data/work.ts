@@ -62,7 +62,7 @@ export const workItems: WorkItem[] = [
 			'Successfully defending a man who had falsely confessed to murder — exposing coercive interrogation and setting an innocent man free after just 45 minutes of jury deliberation.',
 		body: [
 			'Johnny Foote was a young co-worker of the slain woman Velma Nesset at Permian Mall, working the early morning shift. When Velma did not show up for work, Johnny was sent to search the ditch and culvert she would have crossed on her three-block walk. He reported seeing nothing — and because of the position of the sun and the shadows inside the culvert, the body was not visible from where he stood. His insistence that no one had been there raised suspicion with detectives.',
-			"Johnny — a man whose intelligence quotient was only a point or two above the classification for retardation — became a repeat suspect. Every time a new detective was assigned to the unsolved case, he was hauled in for questioning. He was shown crime-scene photos and accused of having been at the scene. He denied it each time, until the final interrogation when officers told him he had failed a polygraph test. In reality, Johnny had passed. A police officer later testified under oath that it was standard operating procedure in the Odessa Police Department to tell suspects they had failed when they had in fact passed.",
+			"Johnny — a young man whose IQ was tested as being 'Low' — became a repeat suspect. Every time a new detective was assigned to the unsolved case, he was hauled in for questioning. He was shown crime-scene photos and accused of having been at the scene. He denied it each time, until the final interrogation when officers told him he had failed a polygraph test. In reality, Johnny had passed. A police officer later testified under oath that it was standard operating procedure in the Odessa Police Department to tell suspects they had failed when they had in fact passed.",
 			'Broken by months of repeated interrogation, Johnny confessed to a crime he did not commit. A psychiatrist who testified on his behalf likened it to a workaholic husband wrongly accused of an affair by his wife night after night — eventually he would agree to whatever she said just to make it stop.',
 			"Cynthia Clack and co-counsel John Hoestenbach took the case. Where most attorneys would have read the confession, negotiated the best plea bargain, and collected their fee, Cynthia investigated far beyond the confession. She discovered Johnny had no motive, no weapon, and no opportunity — he was surrounded by other people during the entire time frame when, according to the autopsy, the killing had taken place.",
 			'The hard work paid off. After only forty-five minutes of deliberation, the jury returned a verdict of Not Guilty. In July 2021, KBAT DJ Tawny the Rock Chick featured the case on the series 365 Days Of Texas True Crime, and subsequent DNA evidence definitively linked the murder to another man, Billy Wayne Ludwigson.',
@@ -105,7 +105,7 @@ export const workItems: WorkItem[] = [
 			'The Emily Wu case thrust Cynthia Clack onto an international stage. In November 2005, Emily Wu — a Chinese national — found herself at the center of a complex and emotionally charged international child kidnapping and custody dispute after her two-year-old son was taken from Guangzhou, China, and brought to Texas.',
 			"Clack represented Emily in navigating the labyrinthine intersection of Texas family law and international treaty obligations. The case required coordinating with legal counsel in China, communicating with Chinese governmental authorities, and managing intense media scrutiny — both domestically and abroad.",
 			'The matter received significant coverage in China, where it became a touchstone in discussions about international parental abduction, the rights of foreign nationals in U.S. courts, and the adequacy of cross-border legal frameworks.',
-			"In January 2006, an Ector County judge granted Wu temporary custody of her son. As a result of Cynthia's advocacy, she and her client became well-known figures in China. The case reinforced her reputation as an attorney who does not shy away from complexity.",
+			"In January 2006, an Ector County judge granted Wu temporary custody of her son. Ultimately, we had primary custody in the Divorce Decree with the right to take her son home to China. As a result of Cynthia's advocacy, she and her client became well-known figures in China. The case reinforced her reputation as an attorney who does not shy away from complexity.",
 		],
 		timeline: [
 			{ year: 'November 2005', label: 'Emily Wu\'s son taken from Guangzhou, China; Wu travels to Texas' },
@@ -213,27 +213,27 @@ export const workItems: WorkItem[] = [
 			'[PLACEHOLDER] Additional accolades to be confirmed',
 		],
 		externalHref: 'https://cynthiaclack.com',
-		relatedSlugs: ['crossing-together', 'johnny-foote', 'emily-wu'],
+		relatedSlugs: ['doodles-the-series', 'johnny-foote', 'emily-wu'],
 	},
-	{
-		slug: 'crossing-together',
-		category: 'books',
-		title: 'Crossing Together',
-		subtitle: 'A Journey of Faith and Resilience',
-		year: '2017',
-		tag: 'Book',
-		isPlaceholder: true,
-		summary:
-			'[PLACEHOLDER] Details pending confirmation of publication history.',
-		body: [
-			'[PLACEHOLDER] The description for Crossing Together is pending confirmation from the author regarding its publication history and contents.',
-		],
-		accolades: [
-			'[PLACEHOLDER] Accolades pending confirmation',
-		],
-		externalHref: 'https://cynthiaclack.com',
-		relatedSlugs: ['discovering-the-club', 'doodles-the-series'],
-	},
+	// {
+	// 	slug: 'crossing-together',
+	// 	category: 'books',
+	// 	title: 'Crossing Together',
+	// 	subtitle: 'A Journey of Faith and Resilience',
+	// 	year: '2017',
+	// 	tag: 'Book',
+	// 	isPlaceholder: true,
+	// 	summary:
+	// 		'[PLACEHOLDER] Details pending confirmation of publication history.',
+	// 	body: [
+	// 		'[PLACEHOLDER] The description for Crossing Together is pending confirmation from the author regarding its publication history and contents.',
+	// 	],
+	// 	accolades: [
+	// 		'[PLACEHOLDER] Accolades pending confirmation',
+	// 	],
+	// 	externalHref: 'https://cynthiaclack.com',
+	// 	relatedSlugs: ['discovering-the-club', 'doodles-the-series'],
+	// },
 	// {
 	// 	slug: 'other-side-of-life',
 	// 	category: 'books',
@@ -286,7 +286,7 @@ export const workItems: WorkItem[] = [
 			'Published under Tiger Tale Companies',
 			'Based on the real-life antics of a teacup poodle named Dude',
 		],
-		relatedSlugs: ['discovering-the-club', 'crossing-together'],
+		relatedSlugs: ['discovering-the-club', 'eye-of-the-tiger'],
 		volumes: [
 			{
 				title: 'Doodles the American Poodle',
