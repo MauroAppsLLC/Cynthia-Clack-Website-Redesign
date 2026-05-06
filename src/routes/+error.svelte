@@ -12,10 +12,10 @@
 	}
 
 	const ROUTES: Route[] = [
-		{ path: '/', label: 'Home', keywords: ['home', 'index', 'main', 'cynthia', 'clack', 'attorney', 'lawyer', 'law'] },
-		{ path: '/about', label: 'About', keywords: ['about', 'bio', 'biography', 'background', 'story', 'cynthia', 'clack'] },
+		{ path: '/', label: 'Home', keywords: ['home', 'index', 'main', 'attorney', 'lawyer', 'law'] },
+		{ path: '/about', label: 'About', keywords: ['about', 'bio', 'biography', 'background', 'story', 'cynthia', 'clack', 'me'] },
 		{ path: '/speaking', label: 'Speaking', keywords: ['speaking', 'speaker', 'keynote', 'talk', 'event', 'lecture', 'presentation'] },
-		{ path: '/contact', label: 'Contact', keywords: ['contact', 'reach', 'email', 'phone', 'office', 'consult', 'consultation'] },
+		{ path: '/contact', label: 'Contact', keywords: ['contact', 'reach', 'email', 'phone', 'office', 'consult', 'consultation', 'touch', 'connect'] },
 		{ path: '/work', label: 'Work', keywords: ['work', 'portfolio', 'cases', 'projects', 'books', 'writings'] },
 		{
 			path: '/work/johnny-foote',
@@ -44,6 +44,34 @@
 		}
 	];
 
+	// ─── Infinite-redirect guard ─────────────────────────────────────────────────
+
+	const REDIRECT_GUARD_KEY = 'error_page_redirected';
+
+	/** Returns true if we already attempted a redirect for this pathname in this session. */
+	function hasAlreadyRedirected(pathname: string): boolean {
+		try {
+			const stored = sessionStorage.getItem(REDIRECT_GUARD_KEY);
+			if (!stored) return false;
+			const set: string[] = JSON.parse(stored);
+			return set.includes(pathname);
+		} catch {
+			return false;
+		}
+	}
+
+	/** Mark a pathname as having been redirected so we don't loop. */
+	function markRedirected(pathname: string): void {
+		try {
+			const stored = sessionStorage.getItem(REDIRECT_GUARD_KEY);
+			const set: string[] = stored ? JSON.parse(stored) : [];
+			if (!set.includes(pathname)) set.push(pathname);
+			sessionStorage.setItem(REDIRECT_GUARD_KEY, JSON.stringify(set));
+		} catch {
+			// sessionStorage unavailable — silently skip
+		}
+	}
+
 	// ─── URL matching logic ──────────────────────────────────────────────────────
 
 	/**
@@ -71,7 +99,7 @@
 			for (const token of tokens) {
 				// Exact keyword hit
 				if (route.keywords.includes(token)) score += 2;
-				// Partial keyword hit (token appears inside a keyword)
+				// Partial keyword hit (token appears inside a keyword or vice versa)
 				else if (route.keywords.some((kw) => kw.includes(token) || token.includes(kw))) score += 1;
 			}
 			if (score > bestScore) {
@@ -88,27 +116,35 @@
 
 	let countdown = $state(5);
 	let targetRoute = $state<Route | null>(null);
-	let isFromGoogle = $state(false);
-	let redirected = $state(false);
+	let loopDetected = $state(false);
 
 	// ─── Mount logic ─────────────────────────────────────────────────────────────
 
 	onMount(() => {
+		const pathname = page.url.pathname;
+
+		// Guard: if we already redirected from this exact pathname, do NOT redirect
+		// again. This breaks any potential infinite loop.
+		if (hasAlreadyRedirected(pathname)) {
+			loopDetected = true;
+			targetRoute = null;
+			return;
+		}
+
 		const referrer = typeof document !== 'undefined' ? document.referrer : '';
-		isFromGoogle =
+		const isFromSearchEngine =
 			referrer.includes('google.') ||
 			referrer.includes('googlebot') ||
 			referrer.includes('bing.com') ||
 			referrer.includes('yahoo.com') ||
 			referrer.includes('duckduckgo.com');
 
-		const pathname = page.url.pathname;
 		const matched = findBestMatch(pathname);
 
 		// If from a search engine and no confident match, go home immediately
-		if (isFromGoogle && !matched) {
+		if (isFromSearchEngine && !matched) {
+			markRedirected(pathname);
 			goto('/', { replaceState: true });
-			redirected = true;
 			return;
 		}
 
@@ -119,8 +155,8 @@
 			countdown -= 1;
 			if (countdown <= 0) {
 				clearInterval(interval);
+				markRedirected(pathname);
 				goto(targetRoute?.path ?? '/', { replaceState: true });
-				redirected = true;
 			}
 		}, 1000);
 
@@ -131,7 +167,6 @@
 	const destination = $derived(targetRoute?.path ?? '/');
 	const destinationLabel = $derived(targetRoute?.label ?? 'Home');
 	const statusCode = $derived(page.status);
-	const message = $derived(page.error?.message ?? 'Page not found');
 </script>
 
 <svelte:head>
