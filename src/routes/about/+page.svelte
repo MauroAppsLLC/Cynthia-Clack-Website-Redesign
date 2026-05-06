@@ -5,7 +5,7 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { optimizeImage } from '$lib/utils/image';
 
-	const brickLeftSrc = '/images/cynthia-speaking.jpeg';
+	const brickLeftSrc = '/images/cynthia-office-final.jpeg';
 const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	const SITE_URL = 'https://cynthiaclack.com';
 </script>
@@ -38,7 +38,7 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 	<!-- IMAGE CONTENT (Stacked under text on mobile, absolute left-aligned on desktop) -->
 	<div class="relative w-full h-[50vh] md:absolute md:top-0 md:bottom-0 md:left-0 md:w-[55%] md:h-auto order-2 md:order-none">
 		<picture class="absolute inset-0 h-full w-full">
-			<source media="(max-width: 768px)" srcset={optimizeImage('/images/cynthia-speaking.jpeg') || '/images/cynthia-speaking.jpeg'} />
+			<source media="(max-width: 768px)" srcset={optimizeImage('/images/cynthia-office-final.jpeg') || '/images/cynthia-office-final.jpeg'} />
 			<img
 				src={optimizeImage(brickLeftSrc) || brickLeftSrc}
 				alt="Cynthia L. Clack speaking at a podium"

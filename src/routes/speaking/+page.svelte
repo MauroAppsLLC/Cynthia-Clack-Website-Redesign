@@ -6,7 +6,7 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { optimizeImage } from '$lib/utils/image';
 
-	const speakerPhotoSrc = '/images/cynthia-office-final.jpeg';
+	const speakerPhotoSrc = '/images/cynthia-speaking.jpeg';
 
 	const SITE_URL = 'https://cynthiaclack.com';
 
@@ -83,11 +83,11 @@
 				<Button href="/contact">Book Cynthia</Button>
 			</div>
 		</div>
-		<div class="overflow-hidden rounded-[var(--radius-card)] shadow-card" use:reveal={{ distance: 14, delay: 120 }}>
+		<div class="mx-auto max-w-[500px] overflow-hidden rounded-[var(--radius-card)] shadow-card" use:reveal={{ distance: 14, delay: 120 }}>
 			<img
 				src={optimizeImage(speakerPhotoSrc)}
 				alt="Cynthia L. Clack - Speaker"
-				class="aspect-[4/3] w-full object-cover"
+				class="aspect-[4/5] w-full object-cover object-top"
 				loading="lazy"
 			/>
 		</div>
