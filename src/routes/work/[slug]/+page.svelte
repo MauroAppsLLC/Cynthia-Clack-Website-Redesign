@@ -182,8 +182,8 @@
 
 		<!-- Main narrative -->
 		<div class="detail-body__prose">
-			{#each item.body as paragraph}
-				<p>{paragraph}</p>
+			{#each item.body as paragraph, i}
+				<p class={i === item.body.length - 1 && paragraph.startsWith('Published by') ? 'detail-body__imprint' : ''}>{paragraph}</p>
 			{/each}
 		</div>
 
@@ -550,6 +550,12 @@
 		margin-bottom: 1.5rem;
 	}
 	.detail-body__prose p:last-child { margin-bottom: 0; }
+	.detail-body__prose .detail-body__imprint {
+		font-size: 0.875rem;
+		opacity: 0.4;
+		font-style: italic;
+		margin-top: 2rem;
+	}
 
 	/* ── Secondary figure ────────────────────────────────────────────────────── */
 	.detail-body__figure {
