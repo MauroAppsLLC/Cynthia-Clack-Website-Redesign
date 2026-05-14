@@ -25,19 +25,17 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache images for 30 days
+# Cache raw static images for 30 days
 [[headers]]
-  for = "*.png"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
+# Cache Netlify Image CDN responses (/.netlify/images?url=...) for 30 days
+# Without this, transformed WebP images have no browser cache and are fetched
+# cold on every page load, making them appear slow despite the CDN existing.
 [[headers]]
-  for = "*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
-
-[[headers]]
-  for = "*.webp"
+  for = "/.netlify/images"
   [headers.values]
     Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
