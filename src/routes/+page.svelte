@@ -117,9 +117,9 @@ const discoveringClubCoverSrc = '/images/discovering_the_club_final.jpeg';
 			<p class="text-sm font-semibold uppercase tracking-widest text-accent/60">Featured Book</p>
 			<h2 class="mt-3 font-headline text-h2 leading-[var(--text-h2--line-height)]">Discovering the Club</h2>
 			<p class="mt-4 text-text/70 leading-relaxed">
-				A powerful examination of patterns hidden inside the family court system — parental
-				alienation, institutional failure, and the resilience of those caught in between.
-				Written from decades of firsthand experience.
+				For nearly three decades, Cynthia sat across from mothers who were terrified,
+				children who were telling the truth, and a court system that kept choosing not to
+				listen. Discovering the Club is the book she was compelled to write.
 			</p>
 			<div class="mt-8">
 				<Button href="/work/discovering-the-club">Explore the Book</Button>
