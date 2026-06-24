@@ -13,7 +13,7 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
 		{ href: '/work', label: 'Works' },
-		{ href: '/speaking', label: "Speaking's" },
+		{ href: '/speaking', label: "Speaking" },
 		{ href: '/contact', label: 'Contact' }
 	];
 
