@@ -144,11 +144,21 @@
 				<a href={backHref} class="btn-outline">
 					← All {categoryLabel[item.category]}
 				</a>
-				{#if item.externalHref}
-					<a href={item.externalHref} target="_blank" rel="noopener noreferrer" class="btn-primary">
+			{#if item.externalHref}
+				{@const isExternal = item.externalHref.startsWith('http')}
+				<a
+					href={item.externalHref}
+					target={isExternal ? '_blank' : undefined}
+					rel={isExternal ? 'noopener noreferrer' : undefined}
+					class="btn-primary"
+				>
+					{#if item.category === 'books'}
+						Purchase Book
+					{:else}
 						Learn More ↗
-					</a>
-				{/if}
+					{/if}
+				</a>
+			{/if}
 			</div>
 		</div>
 

@@ -206,7 +206,7 @@ export const workItems: WorkItem[] = [
 			text: 'This is not a book about monsters in the dark. It is a book about institutions that looked the other way, and about the children who paid the price.',
 			attribution: 'Discovering the Club',
 		},
-		externalHref: 'https://cynthiaclack.com',
+		externalHref: '/work/discovering-the-club/buy',
 		relatedSlugs: ['doodles-the-series', 'johnny-foote', 'emily-wu'],
 	},
 	// {
